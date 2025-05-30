@@ -1,0 +1,15 @@
+﻿Machines,Tags,Level,Tools,Bugs,Status,Date
+Twomillion,Linux,Easy,,,Done,"November 22, 2023"
+Broker-HTB,Linux,Easy,"Msfvenom, Apache ActiveMQ, nginx.conf, ","CVE, Apache-ActiveMQ",Done,"November 23, 2023"
+Pilgrimage,Linux,Easy,"Feroxbuster, git, magick, imagemagick, image, binwalk",cve-2022-44268,Done,"November 25, 2023"
+Sandworm,Linux,Medium,"pgp encryption, decryption, cargo, rust file, firejail","PGP encryption, ",Done,"November 26, 2023"
+Forest,AD-Win,Easy,"nmap, dig, ldapsearch, smbclient, enum4linux, windapsearch.py, GetNPUsers.py, hashcat, evil-winrm, sharphound, bloodhound, PowerView.ps1, secretsdumps.py, psexec.py ","AD, local user is service level has permission to create user and dump the NTLM hashes of administrator.",Done,"December 13, 2023"
+Sauna,AD-Win,Easy,,,Done,"December 19, 2023"
+Active,AD-Win,Easy,,,Done,"December 19, 2023"
+Sizzle,AD-Win,Insane,"gobuster, ldapsearch, smbclient, mount, smbcacls, winrm HTTP 5985, HTTPS 5986, ",,In progress,"December 21, 2023"
+Resolute,AD-Win,Medium,"Crackmapexec, rpcclient, smbmap, smbserver, Dnsadmin, evilwin-RM",,Done,"August 29, 2024"
+Cascade,AD-Win,Medium,,,Done,"January 15, 2024"
+Vault-Practice,AD-Win,Hard,"Responder, smbclient, pxexec",,Done,"April 21, 2024"
+Access Box-Practice,,," sql injections, upload .htaccess, php shell, powerview.ps1, Rubeus.exe, Invoke-RunasCs.ps1, got hash of user, has these permission SeChangeNotifyPrivilege  SeManageVolumeExploit.exe then created msfvenom payload, Printconfig.dll, got shell ",,Done,"April 22, 2024"
+Jacko - Practice,AD-Win,Medium,,,In progress,
+Blackfield,AD-Win,Hard,Kerbrute,,In progress,"May 30, 2024"
