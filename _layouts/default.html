@@ -1,47 +1,102 @@
----
-layout: table_wrappers
----
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .prose h1, .prose h2, .prose h3 {
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .prose code { background-color: #e2e8f0; padding: 0.2rem 0.4rem; border-radius: 0.25rem; }
+        .prose pre { background-color: #2d3748; color: #f7fafc; border-radius: 0.5rem; padding: 1rem; overflow-x: auto; }
+        .left-nav-link.active { background-color: #e2e8f0; font-weight: 600; }
+        .arrow-icon { transition: transform 0.2s; }
+        .arrow-icon.rotated { transform: rotate(90deg); }
+        .toc-link.active { color: #3b82f6; font-weight: 600; }
+    </style>
+</head>
+<body class="flex flex-col h-screen">
 
-<html lang="{{ site.lang | default: 'en-US' }}">
-{% include head.html %}
-<body>
-  <a class="skip-to-main" href="#main-content">Skip to main content</a>
-  {% include icons/icons.html %}
-  {% if page.nav_enabled == true %}
-    {% include components/sidebar.html %}
-  {% elsif layout.nav_enabled == true and page.nav_enabled == nil %}
-    {% include components/sidebar.html %}
-  {% elsif site.nav_enabled != false and layout.nav_enabled == nil and page.nav_enabled == nil %}
-    {% include components/sidebar.html %}
-  {% endif %}
-  <div class="main" id="top">
-    {% include components/header.html %}
-    <div class="main-content-wrap">
-      {% include components/breadcrumbs.html %}
-      <div id="main-content" class="main-content">
-        <main>
-          {% if site.heading_anchors != false %}
-            {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
-          {% else %}
-            {{ content }}
-          {% endif %}
+    <!-- Top Navigation Bar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="/" class="text-xl font-bold text-gray-900">{{ site.title }}</a>
+        </div>
+    </header>
 
-          {% if page.has_toc != false %}
-            {% include components/children_nav.html %}
-          {% endif %}
+    <div class="flex flex-1 overflow-hidden">
+        
+        <!-- Left Sidebar Navigation Menu -->
+        <aside class="w-72 bg-gray-50 border-r border-gray-200 p-6 flex-shrink-0 overflow-y-auto">
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">Documentation</h2>
+            <nav id="leftNav" class="space-y-2">
+                {% for page in site.pages %}
+                    {% unless page.url contains "devsecops" %}
+                        <a href="{{ page.url }}" class="left-nav-link block text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url == page.url %}active{% endif %}">{{ page.title }}</a>
+                    {% endunless %}
+                {% endfor %}
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto p-8 relative">
+            <div class="max-w-3xl mx-auto">
+                <div id="content" class="prose max-w-none text-gray-800">
+                    {{ content }}
+                </div>
+            </div>
         </main>
-        {% include components/footer.html %}
-      </div>
-    </div>
-    {% if site.search_enabled != false %}
-      {% include components/search_footer.html %}
-    {% endif %}
-  </div>
 
-  {% if site.mermaid %}
-    {% include components/mermaid.html %}
-  {% endif %}
+        <!-- Right Sidebar Table of Contents (TOC) -->
+        <aside class="w-64 bg-gray-50 border-l border-gray-200 p-6 flex-shrink-0 overflow-y-auto hidden lg:block">
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">On This Page</h2>
+            <nav id="toc" class="space-y-2 text-sm">
+                <!-- TOC will be generated here by JavaScript -->
+            </nav>
+        </aside>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contentDiv = document.querySelector('.prose');
+            const tocNav = document.getElementById('toc');
+            
+            // Generate Table of Contents from headings
+            tocNav.innerHTML = '';
+            const headings = contentDiv.querySelectorAll('h2, h3, h4');
+            if (headings.length > 0) {
+                headings.forEach(heading => {
+                    const slug = slugify(heading.textContent);
+                    heading.id = slug;
+                    const level = heading.tagName.toLowerCase();
+                    const link = document.createElement('a');
+                    link.href = `#${slug}`;
+                    link.textContent = heading.textContent;
+                    link.className = 'toc-link block text-gray-600 hover:text-blue-500 transition-colors duration-200 rounded-md py-1 px-2';
+                    if (level === 'h3') { link.style.paddingLeft = '1.5rem'; }
+                    if (level === 'h4') { link.style.paddingLeft = '2.5rem'; }
+                    tocNav.appendChild(link);
+                });
+            }
+
+            // Simple slugify function for creating IDs
+            function slugify(text) {
+                return text.toString().toLowerCase()
+                    .replace(/\s+/g, '-')
+                    .replace(/[^\w-]+/g, '')
+                    .replace(/--+/g, '-')
+                    .replace(/^-+/, '')
+                    .replace(/-+$/, '');
+            }
+        });
+    </script>
 </body>
 </html>
