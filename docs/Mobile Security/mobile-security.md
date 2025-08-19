@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Application Security
+title: Mobile Security
 ---
 # Application Security
 
