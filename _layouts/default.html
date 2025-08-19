@@ -83,7 +83,7 @@
                 {% for item in site.data.navigation %}
                     {% if item.subitems %}
                         <div class="relative">
-                            <a href="{{ item.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url == item.url %}active{% endif %} {% if page.url contains item.url %}active{% endif %}">
+                            <a href="{{ item.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url contains item.url %}active{% endif %}">
                                 <span>{{ item.title }}</span>
                                 <span class="arrow-icon {% if page.url contains item.url %}rotated{% endif %}">
                                     <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -95,7 +95,7 @@
                                 {% for subitem in item.subitems %}
                                     {% if subitem.subitems %}
                                         <div class="relative">
-                                            <a href="{{ subitem.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url == subitem.url %}active{% endif %} {% if page.url contains subitem.url %}active{% endif %}">
+                                            <a href="{{ subitem.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url contains subitem.url %}active{% endif %}">
                                                 <span>{{ subitem.title }}</span>
                                                 <span class="arrow-icon {% if page.url contains subitem.url %}rotated{% endif %}">
                                                     <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -173,22 +173,22 @@
             }
 
             // JavaScript for handling sidebar dropdowns
-            const navItems = document.querySelectorAll('#leftNav > div > .left-nav-link');
-            navItems.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const parentDiv = link.closest('div');
-                    const subMenu = parentDiv.querySelector('.sub-menu');
-                    const arrow = parentDiv.querySelector('.arrow-icon');
-                    
-                    if (subMenu) {
+            const navLinks = document.querySelectorAll('.left-nav-link');
+            navLinks.forEach(link => {
+                const parentDiv = link.closest('div');
+                const subMenu = parentDiv ? parentDiv.querySelector('.sub-menu') : null;
+                const arrow = parentDiv ? parentDiv.querySelector('.arrow-icon') : null;
+                
+                if (subMenu) {
+                    link.addEventListener('click', (e) => {
                         e.preventDefault();
                         subMenu.classList.toggle('hidden');
                         arrow.classList.toggle('rotated');
-                    }
-                });
+                    });
+                }
             });
 
-            // Jekyll site data for search
+            // Jekyll site data for search (This part is crucial)
             const siteData = {
                 {% for page in site.pages %}
                 {% if page.layout == "default" %}

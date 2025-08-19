@@ -11,7 +11,7 @@ Malicious code can be injected into a serverless function if its input is not va
 
 ## How to Detect (with Code)
 Test function inputs with malicious payloads.
-```json
+```bash
 { "cmd": "ls -la" }
 ```
 

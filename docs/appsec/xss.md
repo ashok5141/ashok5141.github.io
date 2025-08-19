@@ -11,7 +11,7 @@ Occurs when an application takes untrusted input and sends it to a web browser w
 
 ## How to Detect (with Code)
 Look for input fields that reflect data back to the user without encoding.
-```html
+```bash
 <p>Hello, {{ user_input }}</p>
 ```
 If you enter `<script>alert('XSS');</script>`, a pop-up will appear.

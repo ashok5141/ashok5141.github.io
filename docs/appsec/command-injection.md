@@ -11,7 +11,7 @@ Command injection is an attack where an attacker can execute arbitrary commands 
 
 ## How to Detect (with Code)
 Look for an application that takes user input and uses it to execute a system command.
-```php
+```bash
 <?php
 $target = $_GET['ip'];
 $cmd = 'ping ' . $target;

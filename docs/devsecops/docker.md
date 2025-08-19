@@ -13,6 +13,8 @@ Using unsigned or unverified images can introduce malware into your environment.
 Check for image integrity using a tool like Docker Content Trust.
 ```bash
 docker trust inspect --pretty your-image:latest
+```
+
 This command will display the signing information.
 
 ## Mitigations
