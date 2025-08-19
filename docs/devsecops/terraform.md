@@ -1,9 +1,4 @@
----
-
-### File: `docs/devsecops/terraform.md`
-
-```markdown
----
+-
 layout: default
 title: Security in Terraform
 ---
