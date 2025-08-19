@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mobile Security
+title: OWASP Top 10 Mobile Security
 ---
 # Application Security
 
@@ -21,3 +21,4 @@ An attacker might submit this as a username in a login form to bypass authentica
 
 ```sql
 SELECT * FROM users WHERE name = 'admin' OR 1=1;
+```
