@@ -54,11 +54,6 @@
             color: #3b82f6;
             font-weight: 600;
         }
-        /* Style for the active left nav link based on current page URL */
-        .left-nav-link[href="{{ page.url }}"] {
-            background-color: #e2e8f0;
-            font-weight: 600;
-        }
     </style>
 </head>
 <body class="flex flex-col h-screen">
@@ -88,7 +83,7 @@
                 {% for item in site.data.navigation %}
                     {% if item.subitems %}
                         <div class="relative">
-                            <a href="{{ item.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 cursor-pointer {% if page.url contains item.url %}active{% endif %}">
+                            <a href="{{ item.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url == item.url %}active{% endif %} {% if page.url contains item.url %}active{% endif %}">
                                 <span>{{ item.title }}</span>
                                 <span class="arrow-icon {% if page.url contains item.url %}rotated{% endif %}">
                                     <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +95,7 @@
                                 {% for subitem in item.subitems %}
                                     {% if subitem.subitems %}
                                         <div class="relative">
-                                            <a href="{{ subitem.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 cursor-pointer {% if page.url contains subitem.url %}active{% endif %}">
+                                            <a href="{{ subitem.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url == subitem.url %}active{% endif %} {% if page.url contains subitem.url %}active{% endif %}">
                                                 <span>{{ subitem.title }}</span>
                                                 <span class="arrow-icon {% if page.url contains subitem.url %}rotated{% endif %}">
                                                     <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -177,6 +172,22 @@
                     .replace(/-+$/, '');
             }
 
+            // JavaScript for handling sidebar dropdowns
+            const navItems = document.querySelectorAll('#leftNav > div > .left-nav-link');
+            navItems.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const parentDiv = link.closest('div');
+                    const subMenu = parentDiv.querySelector('.sub-menu');
+                    const arrow = parentDiv.querySelector('.arrow-icon');
+                    
+                    if (subMenu) {
+                        e.preventDefault();
+                        subMenu.classList.toggle('hidden');
+                        arrow.classList.toggle('rotated');
+                    }
+                });
+            });
+
             // Jekyll site data for search
             const siteData = {
                 {% for page in site.pages %}
@@ -208,12 +219,20 @@
                             const title = document.createElement('div');
                             title.className = 'font-semibold text-gray-900';
                             title.textContent = page.title;
+
+                            const contentSnippet = page.content.toLowerCase().includes(query) ?
+                                page.content.substring(page.content.toLowerCase().indexOf(query) - 50, page.content.toLowerCase().indexOf(query) + 50).trim() + '...' : '';
                             
+                            const snippet = document.createElement('div');
+                            snippet.className = 'text-sm text-gray-500';
+                            snippet.textContent = contentSnippet;
+
                             const path = document.createElement('div');
-                            path.className = 'text-sm text-gray-500';
+                            path.className = 'text-sm text-gray-500 mt-1';
                             path.textContent = url;
                             
                             resultLink.appendChild(title);
+                            resultLink.appendChild(snippet);
                             resultLink.appendChild(path);
                             searchResultsDiv.appendChild(resultLink);
                             resultsFound = true;
@@ -235,22 +254,6 @@
                 if (!searchInput.contains(e.target) && !searchResultsDiv.contains(e.target)) {
                     searchResultsDiv.classList.add('hidden');
                 }
-            });
-
-            // JavaScript for handling sidebar dropdowns
-            const navItems = document.querySelectorAll('#leftNav > div > .left-nav-link');
-            navItems.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const parentDiv = link.closest('div');
-                    const subMenu = parentDiv.querySelector('.sub-menu');
-                    const arrow = parentDiv.querySelector('.arrow-icon');
-                    
-                    if (subMenu) {
-                        e.preventDefault();
-                        subMenu.classList.toggle('hidden');
-                        arrow.classList.toggle('rotated');
-                    }
-                });
             });
         });
     </script>
