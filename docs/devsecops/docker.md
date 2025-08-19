@@ -4,23 +4,17 @@ title: Security in Docker
 ---
 # Security in Docker
 
-Docker containers have become a key part of modern software development. Securing them is vital to prevent attacks.
+Docker containers have become a key part of modern software development.
 
-## Key Security Practices
+## Vulnerability: Unsigned Images
+Using unsigned or unverified images can introduce malware into your environment.
 
-- **Image Scanning:** Checking Docker images for known vulnerabilities using tools like Trivy or Clair.
-- **Least Privilege:** Running containers with minimal necessary permissions. This can be done by using non-root users.
-- **Signing Images:** Ensuring the integrity and authenticity of container images.
+## How to Detect (with Code)
+Check for image integrity using a tool like Docker Content Trust.
+```bash
+docker trust inspect --pretty your-image:latest
+This command will display the signing information.
 
-### Example: Running a non-root user
-
-```dockerfile
-# Dockerfile excerpt
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN adduser --disabled-password --gecos "" nonrootuser
-USER nonrootuser
-CMD ["npm", "start"]
+## Mitigations
+- Image Scanning: Use tools like Trivy or Clair to scan for vulnerabilities.
+- Image Signing: Ensure all images are signed and verified before deployment.

@@ -4,30 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
+    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f7fafc;
+        }
         .prose h1, .prose h2, .prose h3 {
             border-bottom: 1px solid #e2e8f0;
             padding-bottom: 0.5rem;
             margin-top: 1.5rem;
             margin-bottom: 1rem;
         }
-        .prose code { background-color: #e2e8f0; padding: 0.2rem 0.4rem; border-radius: 0.25rem; }
-        .prose pre { background-color: #2d3748; color: #f7fafc; border-radius: 0.5rem; padding: 1rem; overflow-x: auto; }
-        .left-nav-link.active { background-color: #e2e8f0; font-weight: 600; }
-        .arrow-icon { transition: transform 0.2s; }
-        .arrow-icon.rotated { transform: rotate(90deg); }
-        .toc-link.active { color: #3b82f6; font-weight: 600; }
+        .prose ul, .prose ol {
+            padding-left: 1.5rem;
+        }
+        .prose code {
+            background-color: #e2e8f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+        }
+        .prose pre {
+            background-color: #2d3748;
+            color: #f7fafc;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        /* Style for the search input focus state */
+        #searchInput:focus {
+            box-shadow: 0 0 0 2px #cbd5e0;
+            outline: none;
+        }
+        .arrow-icon {
+            transition: transform 0.2s;
+        }
+        .arrow-icon.rotated {
+            transform: rotate(90deg);
+        }
+        .left-nav-link.active {
+            background-color: #e2e8f0;
+            font-weight: 600;
+        }
+        .toc-link.active {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        /* Style for the active left nav link based on current page URL */
+        .left-nav-link[href="{{ page.url }}"] {
+            background-color: #e2e8f0;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="flex flex-col h-screen">
 
-    <!-- Top Navigation Bar -->
+    <!-- Top Navigation Bar with Search -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-            <a href="/" class="text-xl font-bold text-gray-900">{{ site.title }}</a>
+            <a href="{{ '/' | relative_url }}" class="text-xl font-bold text-gray-900">{{ site.title }}</a>
+            <div class="relative flex-grow flex justify-center mx-8">
+                <div class="relative w-full max-w-lg">
+                    <input type="text" id="searchInput" placeholder="Search knowledge base..." class="w-full pl-10 pr-4 py-2 rounded-full text-sm text-gray-700 bg-gray-100 border border-gray-200 focus:bg-white focus:border-blue-500 transition-colors duration-200">
+                    <svg class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <div id="searchResults" class="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 hidden"></div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -35,12 +83,46 @@
         
         <!-- Left Sidebar Navigation Menu -->
         <aside class="w-72 bg-gray-50 border-r border-gray-200 p-6 flex-shrink-0 overflow-y-auto">
-            <h2 class="text-lg font-semibold text-gray-900 mb-4">Documentation</h2>
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">Topics</h2>
             <nav id="leftNav" class="space-y-2">
-                {% for page in site.pages %}
-                    {% unless page.url contains "devsecops" %}
-                        <a href="{{ page.url }}" class="left-nav-link block text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url == page.url %}active{% endif %}">{{ page.title }}</a>
-                    {% endunless %}
+                {% for item in site.data.navigation %}
+                    {% if item.subitems %}
+                        <div class="relative">
+                            <a href="{{ item.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 cursor-pointer {% if page.url contains item.url %}active{% endif %}">
+                                <span>{{ item.title }}</span>
+                                <span class="arrow-icon {% if page.url contains item.url %}rotated{% endif %}">
+                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="sub-menu space-y-1 pl-6 py-1 {% unless page.url contains item.url %}hidden{% endunless %}">
+                                {% for subitem in item.subitems %}
+                                    {% if subitem.subitems %}
+                                        <div class="relative">
+                                            <a href="{{ subitem.url | relative_url }}" class="left-nav-link flex items-center justify-between text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 cursor-pointer {% if page.url contains subitem.url %}active{% endif %}">
+                                                <span>{{ subitem.title }}</span>
+                                                <span class="arrow-icon {% if page.url contains subitem.url %}rotated{% endif %}">
+                                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                            <div class="sub-menu space-y-1 pl-6 py-1 {% unless page.url contains subitem.url %}hidden{% endunless %}">
+                                                {% for subsubitem in subitem.subitems %}
+                                                    <a href="{{ subsubitem.url | relative_url }}" class="left-nav-link block text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url == subsubitem.url %}active{% endif %}">{{ subsubitem.title }}</a>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <a href="{{ subitem.url | relative_url }}" class="left-nav-link block text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url == subitem.url %}active{% endif %}">{{ subitem.title }}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="{{ item.url | relative_url }}" class="left-nav-link block text-gray-700 hover:bg-gray-200 transition-colors duration-200 rounded-md py-2 px-3 {% if page.url == item.url %}active{% endif %}">{{ item.title }}</a>
+                    {% endif %}
                 {% endfor %}
             </nav>
         </aside>
@@ -69,7 +151,6 @@
             const contentDiv = document.querySelector('.prose');
             const tocNav = document.getElementById('toc');
             
-            // Generate Table of Contents from headings
             tocNav.innerHTML = '';
             const headings = contentDiv.querySelectorAll('h2, h3, h4');
             if (headings.length > 0) {
@@ -87,7 +168,6 @@
                 });
             }
 
-            // Simple slugify function for creating IDs
             function slugify(text) {
                 return text.toString().toLowerCase()
                     .replace(/\s+/g, '-')
@@ -96,6 +176,82 @@
                     .replace(/^-+/, '')
                     .replace(/-+$/, '');
             }
+
+            // Jekyll site data for search
+            const siteData = {
+                {% for page in site.pages %}
+                {% if page.layout == "default" %}
+                "{{ page.url | relative_url }}": {
+                    "title": "{{ page.title | escape }}",
+                    "content": "{{ page.content | strip_html | strip_newlines | escape }}"
+                },
+                {% endif %}
+                {% endfor %}
+            };
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const searchResultsDiv = document.getElementById('searchResults');
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                searchResultsDiv.innerHTML = '';
+
+                if (query.length > 0) {
+                    let resultsFound = false;
+                    for (const url in siteData) {
+                        const page = siteData[url];
+                        if (page.title.toLowerCase().includes(query) || page.content.toLowerCase().includes(query)) {
+                            const resultLink = document.createElement('a');
+                            resultLink.href = url;
+                            resultLink.className = 'block p-3 hover:bg-gray-100 rounded-md transition-colors duration-200';
+                            
+                            const title = document.createElement('div');
+                            title.className = 'font-semibold text-gray-900';
+                            title.textContent = page.title;
+                            
+                            const path = document.createElement('div');
+                            path.className = 'text-sm text-gray-500';
+                            path.textContent = url;
+                            
+                            resultLink.appendChild(title);
+                            resultLink.appendChild(path);
+                            searchResultsDiv.appendChild(resultLink);
+                            resultsFound = true;
+                        }
+                    }
+                    if (!resultsFound) {
+                        const noResults = document.createElement('div');
+                        noResults.className = 'p-3 text-gray-500';
+                        noResults.textContent = 'No results found.';
+                        searchResultsDiv.appendChild(noResults);
+                    }
+                    searchResultsDiv.classList.remove('hidden');
+                } else {
+                    searchResultsDiv.classList.add('hidden');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchResultsDiv.contains(e.target)) {
+                    searchResultsDiv.classList.add('hidden');
+                }
+            });
+
+            // JavaScript for handling sidebar dropdowns
+            const navItems = document.querySelectorAll('#leftNav > div > .left-nav-link');
+            navItems.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const parentDiv = link.closest('div');
+                    const subMenu = parentDiv.querySelector('.sub-menu');
+                    const arrow = parentDiv.querySelector('.arrow-icon');
+                    
+                    if (subMenu) {
+                        e.preventDefault();
+                        subMenu.classList.toggle('hidden');
+                        arrow.classList.toggle('rotated');
+                    }
+                });
+            });
         });
     </script>
 </body>

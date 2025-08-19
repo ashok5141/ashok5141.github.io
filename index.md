@@ -2,23 +2,10 @@
 layout: default
 title: Getting Started
 ---
-# Welcome to the Documentation
+# Welcome to the Knowledge Base
 
-This is the main page for our project's documentation. You can navigate through the different sections using the menu on the left.
+This is the main page for your security knowledge base. Use the menu on the left to navigate to different topics.
 
-## Features
+## How to Use This Site
 
-- **Easy Navigation:** The left sidebar helps you find what you're looking for.
-- **On-Page Menu:** The right sidebar provides a quick table of contents for the current page.
-
-### More about features
-This section dives deeper into the features available.
-
-## Installation
-
-To get started, simply clone this repository and follow the instructions in the `setup.md` file.
-
-```bash
-git clone [https://github.com/ashok5141/ashok5141.github.io.git](https://github.com/ashok5141/ashok5141.github.io.git)
-cd ashok5141.github.io
-```
+To begin, simply select a topic from the left sidebar. This site is built with Jekyll and can be easily hosted on GitHub Pages.
