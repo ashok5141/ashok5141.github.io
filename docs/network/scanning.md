@@ -11,6 +11,7 @@ Leaving unnecessary ports open can expose services to attackers.
 
 ## How to Detect (with Code)
 Use a port scanner to identify open ports on a target system.
+
 ```bash
 nmap -p- your-target-ip
 ```
