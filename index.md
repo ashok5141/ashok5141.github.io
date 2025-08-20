@@ -28,7 +28,8 @@ Ashok is an experienced Application Security Engineer with experience in penetra
 - **OSCP**: Currently in progress, this certification validates his practical skills in penetration testing.
 - **Medal of Excellence**: Awarded for being a top performer in secure platform design, reflecting his practical achievements.
 
-#### Career Summary
+
+### Career Summary
 
 > Ashok's career trajectory highlights his progressive experience from software development to specialized security roles. He has consistently applied secure coding practices aligned with industry benchmarks like OWASP and NIST. His experience includes:
 
