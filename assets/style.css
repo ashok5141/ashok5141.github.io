@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -21,17 +21,43 @@ body {
   border: none;
 }
 
-/* Layout */
+/* Layout with 3 columns */
 .container {
   display: flex;
   flex-direction: row;
   padding: 20px;
 }
 
+/* Left sidebar */
+.left-sidebar {
+  flex: 1;
+  border-right: 1px solid #ddd;
+  padding-right: 20px;
+  max-width: 220px;
+}
+
+.left-sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.left-sidebar li {
+  margin: 5px 0;
+}
+
+.left-sidebar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.left-sidebar a:hover {
+  text-decoration: underline;
+}
+
 /* Middle content */
 .content {
   flex: 3;
-  padding-right: 40px;
+  padding: 0 40px;
 }
 
 /* Right sidebar */

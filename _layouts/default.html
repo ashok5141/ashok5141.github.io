@@ -13,12 +13,32 @@
   </header>
 
   <div class="container">
-    <!-- Main Content (center) -->
+    <!-- Left Sidebar: Navigation -->
+    <nav class="left-sidebar">
+      <ul>
+        {% for item in site.data.navigation %}
+          {% if item.subitems %}
+            <li>
+              <strong>{{ item.title }}</strong>
+              <ul>
+                {% for subitem in item.subitems %}
+                  <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <!-- Middle Content -->
     <main class="content">
       {{ content }}
     </main>
 
-    <!-- Right Sidebar: Dynamic TOC -->
+    <!-- Right Sidebar: TOC -->
     <aside class="right-sidebar">
       <h3>On this page</h3>
       <ul id="toc"></ul>
