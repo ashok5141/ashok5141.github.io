@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="left-sidebar">
+      <nav class="left-nav">
+        {% for item in site.data.navigation %}
+          <div class="menu-item">
+            {% if item.subitems %}
+              <a href="#" class="left-nav-link">
+                {{ item.title }}
+                <span class="arrow-icon">▶</span>
+              </a>
+              <ul class="sub-menu hidden">
+                {% for subitem in item.subitems %}
+                  <li><a href="{{ subitem.url }}" class="sub-link">{{ subitem.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a href="{{ item.url }}" class="left-nav-link">{{ item.title }}</a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <h1>{{ site.title }}</h1>
+      <p>Welcome to Ashok’s Knowledge Hub. Select a topic from the left.</p>
+      {{ content }}
+    </main>
+  </div>
+
+  <script src="/assets/script.js"></script>
+</body>
+</html>

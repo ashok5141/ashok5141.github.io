@@ -1,5 +1,4 @@
-title: Ashok Notes
-description: A security documentation site hosted on GitHub Pages.
-theme: null
+title: "Ashok Security Notes"
+description: "Knowledge Hub"
+theme: minima
 markdown: kramdown
-permalink: pretty
