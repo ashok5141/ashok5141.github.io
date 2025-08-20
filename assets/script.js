@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// Simple search filter for content
+// Live search (filters page text)
 document.getElementById("searchBox").addEventListener("keyup", function() {
   let filter = this.value.toLowerCase();
   let content = document.querySelector(".content");

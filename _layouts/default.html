@@ -2,38 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ site.title }}</title>
+  <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="left-sidebar">
-      <nav class="left-nav">
-        {% for item in site.data.navigation %}
-          <div class="menu-item">
-            {% if item.subitems %}
-              <a href="#" class="left-nav-link">
-                {{ item.title }}
-                <span class="arrow-icon">▶</span>
-              </a>
-              <ul class="sub-menu hidden">
-                {% for subitem in item.subitems %}
-                  <li><a href="{{ subitem.url }}" class="sub-link">{{ subitem.title }}</a></li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              <a href="{{ item.url }}" class="left-nav-link">{{ item.title }}</a>
-            {% endif %}
-          </div>
-        {% endfor %}
-      </nav>
-    </aside>
+  <!-- Top Navbar with Search -->
+  <header class="topbar">
+    <h2 class="site-title">{{ site.title }}</h2>
+    <input type="text" id="searchBox" placeholder="Search topics...">
+  </header>
 
-    <!-- Main Content -->
+  <div class="container">
+    <!-- Main Content (center) -->
     <main class="content">
       {{ content }}
     </main>
+
+    <!-- Right Sidebar: Dynamic TOC -->
+    <aside class="right-sidebar">
+      <h3>On this page</h3>
+      <ul id="toc"></ul>
+    </aside>
   </div>
 
   <script src="/assets/script.js"></script>
