@@ -1,5 +1,5 @@
 title: Ashok Notes
 description: A security documentation site hosted on GitHub Pages.
-theme: null
+theme: just-the-docs
 markdown: kramdown
 permalink: pretty
