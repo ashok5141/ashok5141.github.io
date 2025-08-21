@@ -1,12 +1,12 @@
 site_name: Ashok Documentation
-site_url: https://sitename.example
+site_url: https://ashok5141.github.io/
 theme:
   name: material
   font:
     text: Roboto
     code: Roboto Mono
   icon:
-    logo: fontawesome/solid/A
+    #logo: fontawesome/solid/A
   favicon: assets/a.ico
 # features: # Footer optional it will shows you bottom of the page previous or next
 #    - navigation.footer
