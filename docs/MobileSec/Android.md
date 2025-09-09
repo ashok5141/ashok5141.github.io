@@ -1,4 +1,4 @@
-# Android
+# Android Security
 - Android, based on the `Linux kernel`, is a mobile operating system. Discovered by Android Inc., acquired by Google.
 
 ## Android Architecture
@@ -45,7 +45,7 @@ graph LR
 ## Androind Static Analysis
 - Every app project must have an `AndroidManifest.xml` file, with precisely that name, at the root of the project source set. The manifest file describes essential information about your app to the Android build tools, the Android operating system, and Google Play.
 - Android made up apk file, When you decompile the apk, you will get lot of files and folders. One of the file is `AndroidManifest.xml`
-- `AndroidManifest.xml` stores package, version, SDK, Components of applications activity
+- `AndroidManifest.xml` stores permissions, package, version, SDK, Components of applications activity
 
 ```bash
 <?xml version="1.0" encoding="utf-8"?>

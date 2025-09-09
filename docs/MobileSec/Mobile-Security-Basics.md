@@ -1,5 +1,6 @@
 
 # OWASP Mobile Top 10
+- It will categorises top 10 vulnerabilites acroos the world, First one is most common one.
 
 ![Owasp Mobile top 10](https://owasp.org/www-project-mobile-top-10/assets/images/comparison-owasp-10.png)
 
