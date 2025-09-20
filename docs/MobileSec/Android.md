@@ -412,3 +412,30 @@ run app.provider.query content://jakhar.aseem.diva.provider.notesprovider/notes/
 
 #### Bug bunty tips
 - [Link](https://github.com/sushiwushi/bug-bounty-dorks)
+
+## Android File Structure
+- File structure
+```bash
+├── AndroidManifest.xml   # Application's configuration file; defines permissions, components, and security settings.
+│
+├── classes.dex           # Contains the app's compiled Java/Kotlin bytecode. This is the main code file to analyze.
+│
+├── lib/                  # Holds native libraries (in .so files) for different CPU architectures.
+│   ├── arm64-v8a/
+│   ├── armeabi-v7a/
+│   ├── x86/
+│   └── x86_64/
+│
+├── res/                  # Contains compiled resources like layouts, strings, and images.
+│   ├── anim/
+│   ├── drawable/
+│   ├── layout/
+│   └── values/
+│
+├── assets/               # A raw collection of bundled files (e.g., databases, configuration files).
+│
+└── META-INF/             # Contains the app's signature, manifest, and checksums. Critical for integrity verification.
+    ├── CERT.RSA
+    ├── CERT.SF
+    └── MANIFEST.MF
+```
