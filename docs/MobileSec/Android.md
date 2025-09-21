@@ -439,3 +439,14 @@ run app.provider.query content://jakhar.aseem.diva.provider.notesprovider/notes/
     ├── CERT.SF
     └── MANIFEST.MF
 ```
+
+## OWASP Mobile MASVS vs MASTG
+- OWASP MASVS and OWASP MASTG are two foundational frameworks for mobile security, but they serve different purpose.
+- They provide a comprehensive approch that goes far beyond the high-level OWASP Top 10 list.
+
+| | OWASP MASVS | OWASP MASTG|
+|:-|:-|:-|
+| Full Name | Mobile Application Security Verification Standard | Mobile Application Security Testing Guide |
+| Purpose | A **standard** for defining what a secure mobile app should look like. It's a checklist of security controls. | A **guide** on how to perform security testing. It provides detailed methodologies and test cases. |
+| Focus | **What** to secure | **How** to test |
+| Analogy | A list of requirements for building a secure vault. | The instruction manual for a professional vault cracker. |
