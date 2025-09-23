@@ -27,13 +27,139 @@
 
 
 
-# OWASP Mobile MASVS vs MASTG
+## OWASP MASVS vs MASTG
 - OWASP MASVS and OWASP MASTG are two foundational frameworks for mobile security, but they serve different purpose.
 - They provide a comprehensive approch that goes far beyond the high-level OWASP Top 10 list.
 
-| | OWASP MASVS | OWASP MASTG|
+| | OWASP MASVS | OWASP MASTG |
 |:-|:-|:-|
-| Full Name | Mobile Application Security Verification Standard | Mobile Application Security Testing Guide |
+| FullName | Mobile Application Security Verification Standard | Mobile Application Security Testing Guide |
 | Purpose | A **standard** for defining what a secure mobile app should look like. It's a checklist of security controls. | A **guide** on how to perform security testing. It provides detailed methodologies and test cases. |
 | Focus | **What** to secure | **How** to test |
 | Analogy | A list of requirements for building a secure vault. | The instruction manual for a professional vault cracker. | 
+
+### MASVS - During the Design Phase
+- **When**: Before developmet begins.
+- **How**: You use the MASVS as a checklist to define the security requirement for the application. You might specify that your app must meet a certain level of security (e.g., L1:Standard Security or L2: Defense-in-Deapth).
+- *Example*: To meet a L1 requirement, you'd mandate that the app "does not store sensitive data in an unencrypted manner." This sets a clear, verifiable security goal.
+
+
+##### MASVS-STORAGE: Storage
+- Mobile applications handle a wide variety of sensitive data. such as Personally Identifiable Information (PII), Cryptographic material, secrets, and API keys, that often need to be stored locally. 
+- This sensitive data may be stored in private locations, such as the app's internal storage, or in public folders that are accessiable by the user or other apps installed on the device.
+- However, sensitive data can also be unitentionally stored or exposed to publicly accessible locations, typically as a side-effect of using certain APIs or system capabilities such as backups or logs.
+
+| ID | Statement |
+|:-|:-|
+| MASVS-STORAGE-1 | The app securely stores sensitive data |
+| MASVS-STORAGE-2 | The app prevents leakage of sensitive data |
+
+##### MASVS-CRYPTO: Cryptography
+- Cryptography is essential for mobile apps because mobile devices are highly portable amd can be easily lost or stolen.
+- This means that an attacker who gains physical access to a device can potentially access all the sensitive data stored on it, including passwords, financial information, and personally identifiable information.
+- Cryptography provides a means of protecting this sensitive data by encrypting it so that it cannot be easily read or accessed by an unauthorized user.
+
+| ID | Statement |
+|:-|:-|
+| MASVS-CRYPTO-1 | The app employs current strong cryptography and uses it according to industry best practices. |
+| MASVS-CRYPTO-2 | The app performs key management according to industry best practices |
+
+##### MASVS-AUTH: Authentication and Authorization
+- Authenication and authorization are essential components of most mobile apps, especially those that connect to a remote service.
+- These mechanisms provide an added layer of security and help prevent unauthorized access to sensitive user data.
+- Althrough the enforcement of these mechanisms must be on the remote endpoints, it is equally important for the app to follow relevent best practice to ensure the secure use of the involved protocols.
+- Mobile apps often use different forms of authentication, such as biometrics, PIN, or multi-factor authentication code generators, to validate user identity.
+- These mechanisms must be implemented correctly to ensure their effectiveness in preventing unauthorized access.
+- Additionally, some apps may rely solely on local app authentication and may not have a remote endpoint. 
+- In such cases, it is critical to ensure that local authentication mechanisms are secure and implemented following industry best practices.
+
+| ID | Statement |
+|:-|:-|
+| MASVS-AUTH-1 | The app uses secure authentication and authorization protocols and follows the relevant best practices |
+| MASVS-AUTH-2 | The app performs local authentication securely according to the platform best practices |
+| MASVS-AUTH-3 | The app secures sensitive operations with additional authentication |
+
+##### MASVS-NETWORK: Network Communication
+- Secure networking is a critical aspect of mobile app security, particularly for apps that communicate over the network.
+- In order to ensure the confidentiality and integrity of data in transit, developers typically rely on encryption and authentication of the remote endpoint, such as through the use of TLS.
+- However, there are numerous ways in which a developer may accidentally disable the platform secure defaults or bypass them entirely by utilizing low-level APIs or third-party libraries.
+
+| ID | Statement |
+|:-|:-|
+| MASVS-NETWORK-1 | The app secures all network traffic according to the current best practices |
+| MASVS-NETWORK-2 | The app performs identity pinning for all remote endpoints under the developer's control |
+
+##### MASVS-PLATFORM: Platform Interaction
+- The security of mobile apps heavily depends on their interaction with the mobile platform, which often involves exposing data or functionality intentionally through the use of platform-provided inter-process communication (IPC) mechanisms and WebViews to enhance the user experience. 
+- However, these mechanisms can also be exploited by attackers or other installed apps, potentially compromising the app's security.
+
+| ID | Statement |
+|:-|:-|
+| MASVS-PLATFORM-1 | The app uses IPC mechanisms securely |
+| MASVS-PLATFORM-2 | The app uses WebViews securely |
+| MASVS-PLATFORM-3 | The app uses the user interface securely |
+
+##### MASVS-CODE: Code Quality
+- Mobile apps have many data entry points, including the UI, IPC, network, and file system, which might receive data that has been inadvertently modified by untrusted actors. 
+- By treating this data as untrusted input and properly verifying and sanitizing it before use, developers can prevent classical injection attacks, such as SQL injection, XSS, or insecure deserialization. 
+- However, other common coding vulnerabilities, such as memory corruption flaws, are hard to detect in penetration testing but easy to prevent with secure architecture and coding practices.
+- Developers should follow best practices such as the OWASP Software Assurance Maturity Model [SAMM](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) ↗ and NIST.SP.800-218 Secure Software Development Framework [SSDF](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) ↗ to avoid introducing these flaws in the first place.
+
+| ID | Statement |
+|:-|:-|
+| MASVS-CODE-1 | The app requires an up-to-date platform version |
+| MASVS-CODE-2 | The app has a mechanism for enforcing app updates |
+| MASVS-CODE-3 | The app only uses software components without known vulnerabilites |
+| MASVS-CODE-4 | The app validates and sanitizes all untrusted inputs |
+
+##### MASVS-RESILIENCE: Resilience Against Reverse Engineering and Tampering
+- Defense-in-depth measures such as code obfuscation, anti-debugging, anti-tampering, and runtime application self-protection (RASP) can increase an app's resilience against reverse engineering and specific client-side attacks. 
+- They add multiple layers of security controls to the app, making it more difficult for attackers to modify code or extract sensitive information.
+- Business and Commercial Perspective
+    - Theft or compromise of proprietary algorithms, trade secrets, customer data, AI or machine learning models
+    - Fraud, cheating, or revenue leakage in online games, financial apps, or subscription models
+    - Legal and reputational damage due to breach of contracts or regulations
+    - Damage to brand reputation due to negative publicity or customer dissatisfaction
+- Transparency and Open Audit Perspective
+    - It reduces transparency of what the compiled application is doing
+    - Independent verification of the compiled application is more difficult
+    - The diversity of smartphone operating systems can lead to false positives, potentially excluding legitimate users
+    - In case these concerns are valid for the target application, we recommend applying the following principles:
+        - Open source distribution of source code for independent audits
+        - Security must rely on verifiable design, strong cryptography, and server-side validation
+        - Anti-tampering or obfuscation techniques must not be used as a substitute for proper security architecture
+        - Controls should prevent cheating or malicious modification without hindering legitimate users and legitimate analysis or oversight
+- Platform Lock-in
+    - The application and its own memory and files
+    - The underlying OS
+- Malware and Testing Perspective
+    - Conceal malicious functionality
+    - Evade security tools or app store review
+    - Frustrate researchers and hinder forensic analysis
+
+| ID | Statement |
+|:-|:-|
+| MASVS-RESILIENCE-1 | The app validates the integrity of the platform |
+| MASVS-RESILIENCE-2 | The app implements anti-tampering mechanisms |
+| MASVS-RESILIENCE-3 | The app implements anti-static analysis mechanisms |
+| MASVS-RESILIENCE-4 | The app implements anti-dynamic analysis techniques |
+
+##### MASVS-PRIVACY: Privacy
+- The main goal of MASVS-PRIVACY is to provide a baseline for user privacy. It is not intended to cover all aspects of user privacy, especially when other standards and regulations such as ENISA or the GDPR already do that. 
+- We focus on the app itself, looking at what can be tested using information that's publicly available or found within the app through methods like static or dynamic analysis.
+
+| ID | Statement |
+|:-|:-|
+| MASVS-PRIVACY-1 | The app minimizes access to sensitive data and resources |
+| MASVS-PRIVACY-2 | The app prevents identification of the user |
+| MASVS-PRIVACY-3 | The app is transparent about data collection and usage |
+| MASVS-PRIVACY-4 | The app offers user control over their data |
+
+
+
+
+
+
+
+
+### MASTG - During the Testing Phase
