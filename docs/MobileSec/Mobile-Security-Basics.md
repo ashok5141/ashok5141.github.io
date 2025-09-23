@@ -24,11 +24,16 @@
 | **New 5** | **Unprotected Endpoints**: This vulnerability affects the app's components (like Android Activities, Services, or iOS Deeplinks) that can be invoked from other apps. If these components are not properly secured, a malicious app can call them and pass malicious data to compromise the application. | Use static analysis tools like **MobSF** to review the app's manifest file and identify all exported components. On a test device, use tools like **`adb`** (for Android) to try and launch these components with malicious data to see if a crash or other unexpected behavior occurs. | Ensure that app components are not exported unless absolutely necessary. When an endpoint must be exposed, protect it with proper permissions. Implement robust input validation and sanitization for any data received by these endpoints from external sources. |
 | **New 6** | **Unsafe Sharing**: This vulnerability occurs when an application uses insecure methods for inter-app communication, which can lead to the unintended exposure of sensitive data to other applications on the same device. This often involves using insecure intents or content providers. | Use dynamic analysis and a file system viewer on a rooted/jailbroken device to monitor data being passed between apps. Look for sensitive data being written to shared directories that are not properly secured or for broad intent filters that could be intercepted by other apps. | Use explicit and secure intents for inter-app communication. When sharing sensitive data, use private Content Providers and enforce strict permissions to ensure only authorized applications can access the data. |
 
-### Tools
-
-
-### Process
 
 
 
-### Mitigations
+# OWASP Mobile MASVS vs MASTG
+- OWASP MASVS and OWASP MASTG are two foundational frameworks for mobile security, but they serve different purpose.
+- They provide a comprehensive approch that goes far beyond the high-level OWASP Top 10 list.
+
+| | OWASP MASVS | OWASP MASTG|
+|:-|:-|:-|
+| Full Name | Mobile Application Security Verification Standard | Mobile Application Security Testing Guide |
+| Purpose | A **standard** for defining what a secure mobile app should look like. It's a checklist of security controls. | A **guide** on how to perform security testing. It provides detailed methodologies and test cases. |
+| Focus | **What** to secure | **How** to test |
+| Analogy | A list of requirements for building a secure vault. | The instruction manual for a professional vault cracker. | 

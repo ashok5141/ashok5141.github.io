@@ -349,7 +349,7 @@ echo /User/ashok/Downloads/Payload/<App_Name>/ | nuclei -t <Path_Nuclei_Template
 - iOS Pentesting Mindmap 
 ![Image](/assets/IOS_Map.jpeg)
 
-- iOS Penetest Checklist [Link](/assets/iOS+Pentesting+Checklist.xlsx)
+- iOS Penetest Checklist [Link](https://ashok5141.github.io/assets/iOS+Pentesting+Checklist.xlsx)
 - HackerOne Reports
 ```bash
 https://hackerone.com/reports/746541
