@@ -1,7 +1,7 @@
 K8s Architecture
 
-- Historically, software was designed and deployed directly onto Linux-based Operating Systems. However, this often led to 'dependency hell'—where code failed to run on different systems due to mismatched libraries or configurations. To solve this, Docker was introduced. Docker packages an application and all its dependencies into a single container, ensuring consistency across any environment.
-- While Docker is excellent for running individual containers, it lacks built-in capabilities for high-level management, such as autoscaling, self-healing (restarting failed containers), and load balancing across multiple servers. This led to the rise of `Kubernetes (K8s)`, a container orchestration platform that automates the deployment, scaling, and management of containerized applications at scale.
+- Historically, software was designed and deployed directly onto Linux-based Operating Systems. However, this often led to 'dependency hell' where code failed to run on different systems due to mismatched libraries or configurations. To solve this, Docker was introduced. Docker packages an application and all its dependencies into a single container, ensuring consistency across any environment.
+- While Docker is excellent for running individual containers, it lacks built-in capabilities for high-level management, such as autoscaling, self-healing (restarting failed containers), and load balancing across multiple servers. This led to the rise of `Kubernetes(K8s)`, a container orchestration platform that automates the deployment, scaling, and management of containerized applications at scale.
     - Automatic container scheduling and scaling
     - Self-healing (auto-restart, replace, reschedule)
     - Load balancing and service discovery
@@ -70,6 +70,7 @@ The Data Plane is responsible for running workloads and managing the container l
     - **Container Runtime (Docker/containerd)**: If escaped, the attacker gains control of the underlying host machine.
 
 ### Part 2 - Mapping Threat Models to Kubernetes Goat Scenarios
+- The **STRIDE** model (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) is the industry standard for these threats.
 
 | STRIDE Category | K8s Component At Risk | Threat Description | Kubernetes Goat Scenario Mapping |
 | :--- | :--- | :--- | :--- |
