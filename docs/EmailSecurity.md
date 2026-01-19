@@ -1,30 +1,26 @@
 Based on the comprehensive resources provided, I have designed a detailed "Beginner to Master" video course curriculum for Email Security using the Proofpoint Protection Server (PPS). Since I am a text-based AI, I cannot generate a video file, but I have created the complete **script and structure** for this video below.
 
-Following the course, I have provided the **5 specific examples** for identifying phishing and spam as requested.
+- Following the course, I have provided the **5 specific examples** for identifying phishing and spam as requested.
 
 ***
 
-# Video Course: Mastering Proofpoint Protection Server (PPS)
-**Level:** Beginner to Master
-**Course Objective:** To configure, manage, and troubleshoot email security, moving from basic SMTP concepts to advanced threat protection and encryption.
+# Mastering Proofpoint Protection Server (PPS)
+- **Course Objective:** To configure, manage, and troubleshoot email security, moving from basic SMTP concepts to advanced threat protection and encryption.
 
 ---
 
 ## PART 1: THE BASICS (Beginner Level)
 
 ### Scene 1: Understanding Email Infrastructure & SMTP
-**Visuals:** Diagrams of email flow from Sender to Recipient.
-**Script:**
-*   **The Lifecycle of an Email:** Email does not go directly from client to client. It travels from a Mail User Agent (MUA like Outlook) to a Message Transfer Agent (MTA),.
-*   **The SMTP Process:** Simple Mail Transfer Protocol uses a three-part process:
+- **The Lifecycle of an Email:** Email does not go directly from client to client. It travels from a Mail User Agent (MUA like Outlook) to a Message Transfer Agent (MTA),.
+- **The SMTP Process:** Simple Mail Transfer Protocol uses a three-part process:
     1.  **Connection:** The sending server telnets to port 25.
     2.  **Envelope:** The sender issues `HELO`, `MAIL FROM` (sender), and `RCPT TO` (recipient).
     3.  **Data:** The body and headers (Subject, To, From) are sent. Note that the "Envelope Sender" can differ from the "Header From" address,.
 *   **Relaying:** "Relaying" is moving a message from one system to another. PPS will only relay mail if the recipient is in a configured "Inbound Domain" or the sending IP is in the "Allow Relay" list,.
 
 ### Scene 2: PPS Architecture and Filtering Order
-**Visuals:** Module precedence charts.
-**Script:**
+- **Script:**
 *   **Module Hierarchy:** PPS processes messages in a specific order to save resources. The order is:
     1.  **Email Firewall** (Connection management)
     2.  **Virus Protection**
@@ -40,14 +36,10 @@ Following the course, I have provided the **5 specific examples** for identifyin
 ## PART 2: CORE CONFIGURATION (Intermediate Level)
 
 ### Scene 3: User Management and Admin Roles
-**Visuals:** Administrator interface navigation.
-**Script:**
-*   **LDAP Integration:** To avoid managing local passwords, create an LDAP profile (System > User Management). Map the "SAM Account Name" and domain to allow admins to use corporate credentials.
-*   **Admin Roles:** You can create granular roles, such as "Help Desk." You can restrict these roles to specific modules (e.g., Smart Search) and specific quarantine folders (e.g., allow viewing "Zip Attachments" but not sensitive financial blocks).
+- **LDAP Integration:** To avoid managing local passwords, create an LDAP profile (System > User Management). Map the "SAM Account Name" and domain to allow admins to use corporate credentials.
+- **Admin Roles:** You can create granular roles, such as "Help Desk." You can restrict these roles to specific modules (e.g., Smart Search) and specific quarantine folders (e.g., allow viewing "Zip Attachments" but not sensitive financial blocks).
 
 ### Scene 4: Spam Detection and Policies
-**Visuals:** Spam module settings and policy routes.
-**Script:**
 *   **Inbound Policy:** Create a policy named "Inbound." You can enable rules for Malware (Score 50), Phishing (Score 80), and Definite Spam (Score 100),.
 *   **Bulk Email:** Newsletters are "Bulk," not necessarily spam. You should enable the Bulk rule to allow users to see these in their digests,.
 *   **Safe vs. Block Lists:**
@@ -56,8 +48,6 @@ Following the course, I have provided the **5 specific examples** for identifyin
 *   **End User Digests:** Enable digests to let users release their own quarantined spam. Configure the "Digest From" address so users recognize the sender,.
 
 ### Scene 5: The Email Firewall & Recipient Verification
-**Visuals:** Firewall rules menu.
-**Script:**
 *   **Purpose:** The firewall filters based on connection and envelope attributes.
 *   **Recipient Verification:** This prevents "Directory Harvest Attacks." PPS checks if a recipient exists before processing.
     *   **Audit Mode:** Quarantine invalid recipients to a folder to ensure you aren't blocking valid mail due to directory sync issues.
@@ -68,8 +58,6 @@ Following the course, I have provided the **5 specific examples** for identifyin
 ## PART 3: ADVANCED SECURITY & AUTHENTICATION (Advanced Level)
 
 ### Scene 6: Authentication (SPF, DKIM, DMARC)
-**Visuals:** Email Authentication module.
-**Script:**
 *   **SPF (Sender Policy Framework):** Verifies the IP is authorized to send for the domain. By default, PPS doesn't enforce this on inbound mail. To enforce, create a rule to "Quarantine" or "Reject" SPF Failures.
 *   **DKIM:** Checks if the email was altered in transit using a digital signature.
 *   **DMARC:** Relies on SPF and DKIM.
@@ -78,14 +66,10 @@ Following the course, I have provided the **5 specific examples** for identifyin
     3.  Move to "Reject" only after confirming legitimate traffic is passing.
 
 ### Scene 7: Anti-Spoofing and Imposter Protection
-**Visuals:** Anti-spoofing rule creation.
-**Script:**
 *   **Anti-Spoof Rule:** Create a firewall rule where `Envelope Sender` is "Your Domain" AND `Sender IP` is NOT "Your Internal IP." This blocks external actors using your domain.
 *   **Imposter Repository:** High-value targets (CEOs) need extra protection. Add their display names (e.g., "Mary Smith") to the Imposter Repository. If an external email arrives saying it's from "Mary Smith," the Stateful Composite Scoring Service (SCSS) increases the spam score,.
 
 ### Scene 8: Targeted Attack Protection (TAP)
-**Visuals:** TAP Dashboard.
-**Script:**
 *   **Attachment Defense:** Scans supported files (PDF, Office) in a sandbox.
     *   **Config:** Set to "Hold message" while waiting for cloud scan results to ensure no malware slips through.
 *   **URL Defense:** Rewrites links in emails. If a user clicks, they are redirected to Proofpoint first.
@@ -93,8 +77,6 @@ Following the course, I have provided the **5 specific examples** for identifyin
 *   **TAP Dashboard:** Use this to view "Impacted Users" (who clicked) and "VAP" (Very Attacked People).
 
 ### Scene 9: Encryption
-**Visuals:** Encryption module and Outlook plugin.
-**Script:**
 *   **Triggering Encryption:** Create a firewall rule to trigger encryption if the subject contains "[Encrypt]",.
 *   **TLS Fallback:** Configure PPS to attempt TLS (Transport Layer Security) first. If the connection fails, fall back to Proofpoint Encryption (Secure Reader) instead of sending plain text.
 
@@ -103,8 +85,6 @@ Following the course, I have provided the **5 specific examples** for identifyin
 ## PART 4: MAINTENANCE & TROUBLESHOOTING (Master Level)
 
 ### Scene 10: Logs, Syslog, and Smart Search
-**Visuals:** Smart Search interface and Log settings.
-**Script:**
 *   **Smart Search:** The primary troubleshooting tool. Search by sender/recipient to trace a message disposition (e.g., Discarded, Quarantined). Note: It takes 5-6 minutes for data to appear.
 *   **Reading Logs:**
     *   `cmd=run`: The rule triggered.
@@ -113,8 +93,6 @@ Following the course, I have provided the **5 specific examples** for identifyin
 *   **Syslog:** For long-term retention or SIEM integration (like Splunk), configure Remote Log options to send data to a centralized host,.
 
 ### Scene 11: Updates and DNS Blocklists
-**Visuals:** License and Updates page.
-**Script:**
 *   **Module Updates:** PPS checks for spam/virus definition updates every 5 minutes. You can manually force updates in the System > License & Updates module.
 *   **DNS Blocklists (DNSBL):** Subscribe to lists (RBLs) to block IPs known for spam. *Crucial:* Always add your internal networks to the "Internal Net" policy route first to prevent blocking your own outgoing mail.
 
