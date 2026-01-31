@@ -1,0 +1,2519 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ashok5141.github.io/MobileSec/Iphone/">
+      
+      
+        <link rel="prev" href="../Android/">
+      
+      
+        <link rel="next" href="../Mobile-Security-Basics/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/a.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Iphone Security - Ashok Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#iphone-security" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ashok Documentation" class="md-header__button md-logo" aria-label="Ashok Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ashok Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Iphone Security
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ashok Documentation" class="md-nav__button md-logo" aria-label="Ashok Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ashok Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EmailSecurity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EmailSecurity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to MkDocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gym/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Ashok's 30-Day Lean &amp; Chiseled Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OKTA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Okta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%20Security/Prompt%20Injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevSecOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DevSecOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevSecOps/Kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MobileSec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MobileSec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Android/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iphone Security
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iphone Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ios-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IOS Operating System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ios-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Applications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extracting-ipa-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extracting IPA file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ios-basics-for-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Basics for Mitigations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="iOS Basics for Mitigations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-protection-in-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Protection in iOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keychain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keychain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-capabilities-purpose-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Capabilities &amp; Purpose Strings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-app-extenions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS App Extenions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-device-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Device Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-2016-owasp-top-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile 2016 OWASP Top 10
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile 2016 OWASP Top 10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#m1-improper-platform-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M1: Improper Platform Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m2-insecure-data-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M2: Insecure Data Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m3-insecure-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M3: Insecure Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m4-insecure-authenication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M4: Insecure Authenication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m5-insufficient-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M5: Insufficient Cryptography
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owasp-remaining-m6-m7-m8-m9-m10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OWASP Remaining M6, M7, M8, M9, M10
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-analysis-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Analysis iOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static Analysis iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobsf-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MobSF iOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-log-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Log Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardcoded-credentials-mobsf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardcoded Credentials: MobSF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlite-database-core-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite Database: Core Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-sqlite-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other SQLite Databases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firebase-misconfiguration-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firebase Misconfiguration (.json)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-keychain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Keychain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-uipasteboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS UIPasteboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-webviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS WebViews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-hot-patchingenforced-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Hot Patching/Enforced Updating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensitive-information-inside-application-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensitive information inside Application Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insecure-apisfunctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Insecure APIs/Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-analysis-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic Analysis iOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Analysis iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-frida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Frida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jailbreak-detection-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jailbreak Detection bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-pinning-and-bypass-using-frida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSL Pinning and Bypass using Frida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-authentication-mechanism-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Authentication Mechanism Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frida-without-jailbreaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frida without Jailbreaking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-nuclei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Nuclei
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mobile-Security-Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OWASP Mobile Top 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ThreatModeling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ThreatModeling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ThreatModeling/SecureDesign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SecureDesign
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ThreatModeling/Threat-Modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat Modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appsec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appsec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appsec/API-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appsec/WAHH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAHH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appsec/xss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Xss
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ios-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IOS Operating System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ios-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Applications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extracting-ipa-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extracting IPA file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ios-basics-for-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Basics for Mitigations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="iOS Basics for Mitigations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-protection-in-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Protection in iOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keychain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keychain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-capabilities-purpose-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Capabilities &amp; Purpose Strings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-app-extenions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS App Extenions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-device-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Device Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-2016-owasp-top-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile 2016 OWASP Top 10
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile 2016 OWASP Top 10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#m1-improper-platform-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M1: Improper Platform Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m2-insecure-data-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M2: Insecure Data Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m3-insecure-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M3: Insecure Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m4-insecure-authenication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M4: Insecure Authenication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m5-insufficient-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M5: Insufficient Cryptography
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owasp-remaining-m6-m7-m8-m9-m10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OWASP Remaining M6, M7, M8, M9, M10
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-analysis-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Analysis iOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static Analysis iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobsf-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MobSF iOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-log-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Log Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardcoded-credentials-mobsf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardcoded Credentials: MobSF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlite-database-core-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite Database: Core Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-sqlite-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other SQLite Databases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firebase-misconfiguration-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firebase Misconfiguration (.json)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-keychain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Keychain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-uipasteboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS UIPasteboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-webviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS WebViews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-hot-patchingenforced-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Hot Patching/Enforced Updating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensitive-information-inside-application-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensitive information inside Application Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insecure-apisfunctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Insecure APIs/Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-analysis-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic Analysis iOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Analysis iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-frida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Frida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jailbreak-detection-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jailbreak Detection bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-pinning-and-bypass-using-frida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSL Pinning and Bypass using Frida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-authentication-mechanism-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Authentication Mechanism Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frida-without-jailbreaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frida without Jailbreaking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios-nuclei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS Nuclei
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="iphone-security">Iphone Security</h1>
+<ul>
+<li><a href="#static-analysis-ios">Static</a> and <a href="#dynamic-analysis-ios">Dynamic</a> Analysis</li>
+<li>
+<p>Setting up the <strong>Mac Environemt</strong> environment below are the links <a href="https://techrechard.com/download-macos-ventura-iso-for-virtualbox-and-vmware/">IOS Download</a></p>
+</li>
+<li>
+<p>I thought initially <code>IOS</code> for all of the apple family, but their different names their devices.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Device</th>
+<th style="text-align: left;">OS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Iphone</td>
+<td style="text-align: left;">iOS</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ipad</td>
+<td style="text-align: left;">IpadOS</td>
+</tr>
+<tr>
+<td style="text-align: left;">iWatch</td>
+<td style="text-align: left;">WatchOS</td>
+</tr>
+<tr>
+<td style="text-align: left;">Macbook</td>
+<td style="text-align: left;">macOS</td>
+</tr>
+</tbody>
+</table>
+<h5 id="ios-operating-system">IOS Operating System</h5>
+<ul>
+<li>IOS is a mobile operating system that Apple Inc. has designed for its iPhones, Second most popular and widely used after android.<blockquote>
+<p>The structure of the iOS operating system is Layered based. Its communication doesn't occur directly. The layers between the Application Layer and the Hardware layer will help with Communication. The lower level gives basic services on which all applications rely and the higher-level layers provide graphics and interface-related services. Most of the system interfaces comes with a special package called a framework.</p>
+</blockquote>
+</li>
+<li>
+<p>A framework is a directory containing dynamic shared libraries, such as .files, header files, images, and helper applications that support the library. Every layer has its associated frameworks useful for a developer.
+<img alt="Architecture of IOS" src="https://media.geeksforgeeks.org/wp-content/uploads/20210216081624/ios-660x295.png" /></p>
+</li>
+<li>
+<p>CORE OS</p>
+<ul>
+<li>It supports 64 bit enables the application to run faster</li>
+<li>All the IOS thechnologies are built under the lowest level layer i.e. Core OS layer. These technologies include:<ul>
+<li>Core Bluetooth Framework</li>
+<li>External Accessories Framework</li>
+<li>Accelerate Framework</li>
+<li>Security Service Framework</li>
+<li>Local Authorization Framework etc    </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CORE SERVICES<ul>
+<li>Some important frameworks are present in the Core Services layer which helps the iOS os to cure itself and provide better functionality. It is the 2nd lowest layer in the Architecture, below frameworks are present in this layer.</li>
+<li>Address Book Framework: The Address Book Framework provides access to the contact details of the user.</li>
+<li>Cloud Kit Framework: This framework provides a medium to transfer data between your app and iCloud.</li>
+<li>Core Data Framework: It is the technology used to handle the data model of a Model View Controller app.</li>
+<li>Core Foundation Framework: This framework offers data management and service features for iOS applications.</li>
+<li>Core Location Framework: This framework helps in delivering location and heading information to the application.</li>
+<li>Core Motion Framework: All the motion-based data on the device is accessed with the help of the Core Motion Framework.</li>
+<li>Foundation Framework: Objective C covering too many of the features found in the Core Foundation framework.</li>
+<li>HealthKit Framework: This framework handles the health-related information of the user.</li>
+<li>HomeKit Framework: This framework is used for talking with and controlling connected devices with the users home.</li>
+<li>Social Framework: It is simply an interface that will access users' social media accounts.</li>
+<li>StoreKit Framework: It provides support for purchasing content and services from within iOS apps.</li>
+</ul>
+</li>
+<li>MEDIA LAYER<ul>
+<li>This layer helps, Enable all graphics video, and audio technology of the system. This is the second layer in te architecture. The different framework of MEDIA layer are:</li>
+<li>ULKit Graphics: This framework provides support for designing images and animating the view content.</li>
+<li>Core Graphics Framework: This framework support 2D vector and image-based rendering and it is a native drawing engine for iOS.</li>
+<li>Core Animation: This framework provides the optimum animation experience of the apps in iOS.</li>
+<li>Media Player Framework: This framework supports the playing of the playlist. It enables the user to use their iTunes library.</li>
+<li>AV Kit: This framework offers a number of easy-to-use interfaces for video presentation and recording, and even playback of audio and video.</li>
+<li>Open AL: This framework is also an Industry Standard Technology for Audio provision.</li>
+<li>Core Images: This framework offers advanced support for motionless images.</li>
+<li>GL Kit: This framework manages advanced 2D and 3D rendering by hardware-accelerated interfaces.</li>
+</ul>
+</li>
+<li>COCOA TOUCH (APPLICATION LAYER)<ul>
+<li>COCOA Touch is also known as the application layer which acts as an interface for the user to work with the iOS Operating system. It supports touch and motion events and many more features. The COCOA TOUCH layer provides the following frameworks :</li>
+<li>EvenKit Framework: This framework shows a standard system interface using view controllers for viewing and changing events.</li>
+<li>GameKit Framework: This framework even allows users to share game related data online via a Game Center.</li>
+<li>MapKit Framework: This framework provides a scrollable map that may be inserted into the user interface of the app.</li>
+<li>PushKit Framework: This framework provides for registration.</li>
+</ul>
+</li>
+</ul>
+<h5 id="ios-applications">iOS Applications</h5>
+<ul>
+<li>iOS Applications are zipped packages under the extension <code>.ipa</code> A completed application ready to install is called a bundle.</li>
+<li>Decompressing an IPA will have Name.app which contains following files:<ul>
+<li>Info.plist: Specific Application Components</li>
+<li>_CodeSignature/: Plist file with signature over all files in the bundle.</li>
+<li>Assets.car: Zipped file containing assets.</li>
+<li>Frameworks/: Folder containing framework files</li>
+<li>Core Data: Used to save your application's permanent data for offline use, to cache temporary data, and to add undo functionality to your app on a single device.</li>
+<li>Pkginfo: Alternative way to specify the type and creator code of your application or bundle.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Info.plist</strong> is a <code>xml</code> file, Consists of Structured <code>key-value pairs</code></td>
+<td style="text-align: left;">App Permissions:<code>UageDescription</code>, Custom URL schemas:<code>CFBundleURLTypes</code>, Exported/Imported custom document types:<code>UTExportedTypeDeclarations, UTImportedTypeDeclarations</code>, App Transport Security:<code>NSAppTransportSecurity</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>UDID</strong> Unique device identifier</td>
+<td style="text-align: left;">40 digit unique sequence of letters and numbers to identify any iOS device, UDID found on the finder app on the macOS, UDID important gives the details of iOS device details.</td>
+</tr>
+<tr>
+<td style="text-align: left;">On-device Shell</td>
+<td style="text-align: left;">you can get a shell terminal on your iphone using some tweaks such as Mterminal, this can perform all the commands as the computer</td>
+</tr>
+<tr>
+<td style="text-align: left;">Transferring data between device to PC</td>
+<td style="text-align: left;">Command <code>scp -P 22 root@&lt;ip_address&gt;:&lt;path_of_file&gt; &lt;destination_path&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="extracting-ipa-file">Extracting IPA file</h5>
+<ul>
+<li>Most of the times you don't get the source code of the from the developer, Since extraction is important.</li>
+<li>They encrypted with strong encryption key, Se we have the 3 types</li>
+<li>frida-ios-dump <a href="https://github.com/AloneMonkey/frida-ios-dump">Code</a><ul>
+<li>Install frida on device, Install prerequsits <code>sudo pip install -r requirements.txt --upgrade</code>,  keep this seperate teriminal in  command <code>iproxy 2222 22</code>(any port), Command <code>run ./dump.py &lt;App_Name&gt; or &lt;Bundle Identifier&gt;</code> </li>
+</ul>
+</li>
+<li>Filza (Download from the Third-party AppStore <code>Sileo</code>)<ul>
+<li>Go to Filza then <code>/var/container/Bundle/Application/&lt;App_Name&gt;</code>, Create copy of the app you want, copy this inside the payload(You need to create) folder, then paste the inside the payload folder, then make zip of the file and then chnage it to the <Filename>.ipa, then transfer scp -P 22 root@<ip_address>:<path_of_ipa> <destination_path></li>
+</ul>
+</li>
+<li>iMazing<ul>
+<li>Toolket perform actions using <code>https://imazing.com/download</code>, You can only run on the same device of UDID, Not another IOS device.</li>
+</ul>
+</li>
+<li><strong>Sideloading</strong> Install apps using 3U tools<ul>
+<li>Sideloading is a method of installing applications by manually signing them.</li>
+<li>There are various applications which do this, but most common one used is AltStore.</li>
+<li>AltStore signs the IPA file and sideloads it.</li>
+</ul>
+</li>
+</ul>
+<h4 id="ios-basics-for-mitigations">iOS Basics for Mitigations</h4>
+<ul>
+<li>Basics for Mitigations</li>
+</ul>
+<h5 id="data-protection-in-ios">Data Protection in iOS</h5>
+<ul>
+<li>How the <code>File Contents</code> is encrypted in the iOS device 
+<img alt="Data Protection in iOS" src="https://wojciechkulik.pl/wp-content/uploads/2018/06/filesystem.png" /></li>
+<li>Complete Protection <code>NSFileProtectionComplete</code> - it's derived from the user passcode of the device UID protects the class key, Once the device is locked class key will wiped off from the memory, It will inaccessible until the user unlocks the device.</li>
+<li>Protected Unless Open <code>NSFileProtectionCompleteUnlessOpen</code> - It's same like but the class key is never expires after devoce locks, still the file contents accessable for the apps running in the background.</li>
+<li>Protected Until First User Authentication <code>NSFileProtectionCompleteUntilFirstUserAuthentication</code> - This file can be accessed as soon as the user unlocks the device for the first time after booting. It can be accessed even if the user subsequently locks the device and class key is not removed from the memory.</li>
+<li>No Protection <code>NSFileProtectionNone</code> - The key for this protcetion class is protected with the UID only. The class key is stored in "Effaceable Storage", which is a region of flash memory on the iOS device that allows the storage of small amounts of data. This protection class exists for fast remote wiping (Immediate deletion of the class key, which makes the data inaccessible).</li>
+</ul>
+<h5 id="keychain">Keychain</h5>
+<ul>
+<li>Is a encrypted container, It will be accessiable autorized apps or same app can retrive the contents.</li>
+<li>The iOS it own password for the keychains stores encypted format.</li>
+<li>The password encrypted with AES created by PBKDF2 with Salt(device UID) to decrypt file contents.<ul>
+<li><code>kSecAccessControlPasscode</code>: Access the item via a passcode.</li>
+<li><code>kSecAccessControlDeviceBiometryAny</code>:Access the item via one of the fingerprints registed to Touch ID. Adding or removing a fingerprint won't invalidate the item.</li>
+<li><code>kSecAccessControlBiometryCurrentSet</code>: Access the item via one of the fingerprints registered to Touch ID. Adding or removing a fingerprint will invalidate them item.</li>
+<li><code>kSecAccessControlUserPresence</code>:: Access the item via either one of the registered foingerprints (using Touch ID) or default to the passcode.</li>
+</ul>
+</li>
+</ul>
+<h5 id="application-capabilities-purpose-strings">Application Capabilities &amp; Purpose Strings</h5>
+<ul>
+<li>Each app  has a unique home directory and is sandboxed, so that they cannot access protected system resources or files stored by the system or by other apps.</li>
+<li>Purpose Strings or usage description strings are custom texts that are offered ti users in the system's permission request alert when requesting permission to access protected data or resources.</li>
+<li>These can be found inside the <code>Info.plist</code> file
+<div class="language-xml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Info.plist</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">&lt;key&gt;</span>NSAppTransportSecurity<span class="nt">&lt;/key&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;dict&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nt">&lt;key&gt;</span>NSAllowsArbitraryLoads<span class="nt">&lt;/key&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="nt">&lt;true/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;/dict&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="hll"><span class="w">    </span><span class="nt">&lt;key&gt;</span>NSCameraUsageDescription<span class="nt">&lt;/key&gt;</span>
+</span></span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="hll"><span class="w">    </span><span class="nt">&lt;string&gt;</span>To<span class="w"> </span>demonstrate<span class="w"> </span>the<span class="w"> </span>misuse<span class="w"> </span>of<span class="w"> </span>Camera,<span class="w"> </span>please<span class="w"> </span>grant<span class="w"> </span>it<span class="w"> </span>permission<span class="w"> </span>once.<span class="nt">&lt;/string&gt;</span>
+</span></span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h5 id="ios-app-extenions">iOS App Extenions</h5>
+<ul>
+<li>
+<p>Assume <code>Host App</code> is your notes, want to share with your friend <code>App Extension</code> is your sharing app lime Messages so notes copy the contents in the notes to send whomever your like.
+<img alt="iOS App Extenions" src="https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Art/detailed_communication_2x.png" /></p>
+</li>
+<li>
+<p>App extenions let apps offer custom functionality and content to users while they're interacting with other apps or the system. Some of them are:</p>
+<ul>
+<li>Custome Keyboards: Replace the iOS system keyboard with a custom keyboard for use in all apps.</li>
+<li>Share: Post to a sharing website or share content with others.</li>
+<li>Today: Also called widgets, thay offer content or perform quick tasks in the Today view of Notification Center.</li>
+</ul>
+</li>
+</ul>
+<h5 id="ios-device-management">iOS Device Management</h5>
+<ul>
+<li>From iOS verion 6, there is <code>built-in support for device management</code> capabilities with fine grain controls that allows an organization to control the corporate appl;e devices.</li>
+<li>The user can see the installed policies in settings -&gt; General -&gt; Profile and Device Management</li>
+<li>The profile are tied to the deviceID, signed and encrypted by the MDM server and temper proof. They cannot be removed without losing all the corporate data.</li>
+</ul>
+<h2 id="mobile-2016-owasp-top-10">Mobile 2016 OWASP Top 10</h2>
+<p><img alt="OWASP Mobile Top 10 2014, 2016" src="https://sectigostore.com/blog/wp-content/uploads/2020/12/owasp-mobile-top-10-changes-2014-2016.png" /></p>
+<h5 id="m1-improper-platform-usage">M1: Improper Platform Usage</h5>
+<ul>
+<li>Misuse of a platform feature or failure to use platform security controls</li>
+<li>Examples include<ul>
+<li>Platform Permissions</li>
+<li>Misuse of TouchID</li>
+<li>Misuse of Keychain</li>
+<li>Violation of guidelines</li>
+</ul>
+</li>
+</ul>
+<h5 id="m2-insecure-data-storage">M2: Insecure Data Storage</h5>
+<ul>
+<li>Insecure data storage vulnerabilities occur when development teams assume that users or malware will not have access to a mobile device's filesystem and subsequent sensitive information in data-stores on the device Example include<ul>
+<li>Sensitive data stored in SQLite</li>
+<li>Sensitive data stored in Log Files</li>
+<li>Improper authentication of Firebase</li>
+</ul>
+</li>
+</ul>
+<h5 id="m3-insecure-communication">M3: Insecure Communication</h5>
+<ul>
+<li>Mobile applications frequently do not protect network traffic. They may use SSL/TLS during authentication but not elsewhere. This inconsistency leads to the risk of exposing data and session IDs to interception. The use of transport security does not mean the app has implemented it correctly.<ul>
+<li>Usage of older SSL/TLS Libraries</li>
+<li>SSL Pinning Bypass</li>
+<li>Privacy Information Leakage</li>
+</ul>
+</li>
+</ul>
+<h5 id="m4-insecure-authenication">M4: Insecure Authenication</h5>
+<ul>
+<li>Poor or missing authentication schemes allow an adversary to anonymously execute functionality within the mobile app or backend server used by the mobile app.<ul>
+<li>Weak password policy</li>
+<li>Leaking OTP in response</li>
+<li>Leakage of sessions IDs</li>
+</ul>
+</li>
+</ul>
+<h5 id="m5-insufficient-cryptography">M5: Insufficient Cryptography</h5>
+<ul>
+<li>An adversary can return encrypted code or sensitive data to its original unencrypted form due to weak encryption algorithms or flaws within the encryption process.<ul>
+<li>Using no Encryption techniques</li>
+<li>Using weak hashing algorithms like MD5</li>
+<li>Using weak encryption algorithms like SHA-1</li>
+</ul>
+</li>
+</ul>
+<h5 id="owasp-remaining-m6-m7-m8-m9-m10">OWASP Remaining M6, M7, M8, M9, M10</h5>
+<ul>
+<li><strong>M6: Insecure Autorization</strong>: Autorization is the act of checking that the identified individual has the permissions necessary to perform the act. Authorisation checks should always immediately follow authentication of then an incoming request from a mobile device.<ul>
+<li>Hidden Endpoints</li>
+<li>IDORs</li>
+</ul>
+</li>
+<li><strong>M7: Client Code Quality</strong>: Code quality issues are found frequently within most mobile code. The primary goal is to execute foreign code within the mobile code's address space.<ul>
+<li>Memory Leaks</li>
+<li>Buffer Overflow</li>
+</ul>
+</li>
+<li><strong>M8: Code Tempering</strong>: An adversary modify code via malicious forms of the apps hosted in third-party app stores. The attacker may also trick the user into installing the app via phishing attacks. Mitigation is <code>Signature check from the developer</code><ul>
+<li>Changing the certificate to bypass SSL Pinning.</li>
+<li>Changing the API version.</li>
+</ul>
+</li>
+<li><strong>M9: Reverse Engineering</strong>: All mobile code is susceptible to reverse engineering. Code written in languages/frameworks that allow for dynamic introspection at runtime (Java, .NET, Objective C, Swift) are particularly at risk for reverse engineering.<ul>
+<li>Reveal information about backend server</li>
+<li>Recon servers</li>
+</ul>
+</li>
+<li><strong>M10: Extraneous Functionality</strong>: Functionality that exposes information related to back-end test, demo, staging, or UAT environemts should not be included in a production build.<ul>
+<li>Downloading configuration files.</li>
+<li>Examining log files.</li>
+</ul>
+</li>
+</ul>
+<h2 id="static-analysis-ios">Static Analysis iOS</h2>
+<ul>
+<li>Find in the source code of the application certain hard-coded key, Insecure permissions and authentication, Insecure encryption and hashing without running the application</li>
+<li>Static analysis is about decompiling the IPA file and checking out for code related vulnerabilities.<ul>
+<li>Checking out for file permissions</li>
+<li>Checking out for file permissions</li>
+<li>Checking out for insecure API, Functions</li>
+</ul>
+</li>
+</ul>
+<h5 id="mobsf-ios">MobSF iOS</h5>
+<ul>
+<li>Mobile Security Framework(MobSF), Its an automated all-in-one mobile application penetesting framework, Helps to perform runtime assessment.</li>
+<li>Reports can be downloaded in PDF format and Open-source <a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF">MobSF</a> tool.<ul>
+<li>Info.plist security issue permission camera, Lack TLS </li>
+<li>Binary insecure APIs <code>_fopen, _strncpy, _memcpy, _strcpy, _printf, _strlen</code></li>
+<li>Binary functions <code>_random</code>, <code>_malloc</code> leads to memory leakage instead of calloc</li>
+<li>Binary Logging functions <code>_NSLog</code> function for logging</li>
+<li>WebView based on the sensitive information</li>
+</ul>
+</li>
+<li>Frida, Objection tools for the File system analysis</li>
+</ul>
+<h5 id="app-log-analysis">App Log Analysis</h5>
+<ul>
+<li>To check for application logs for sensitive data following needs to be performed:<ul>
+<li>Goto Xcode -&gt; Devices and Simulators -&gt; View device logs to see the logs.</li>
+<li>Grep the logs for sensitive data files</li>
+<li>If Linux <code>idevicesyslog | grep &lt;your_app&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="hardcoded-credentials-mobsf">Hardcoded Credentials: MobSF</h5>
+<ul>
+<li>Many developers hard coded credentials in the app, search for secret, crypt, private, token etc.</li>
+<li>Many apps use third party backend systems, analyse and .json and .xml files for credentials.</li>
+<li>Many apps contain hidden features, search for develop, debug, fake, test in the app binary.</li>
+<li>Check for different .plist files such as <code>GoogleService-Info.plist</code>. These might contain juicy API keys.</li>
+</ul>
+<h5 id="sqlite-database-core-data">SQLite Database: Core Data</h5>
+<ul>
+<li>Core Data is a framework for managing the model layer of objects in your application.</li>
+<li>Core Data can use SQLite as its persistent store.</li>
+<li>SQLite Core Data information of an application in the path oen using <strong>filza</strong> application to this path <code>/private/var/mobile/Containers/Data/Application/{APPID}/Library/Application</code> support.</li>
+<li>Note: If SQLite Database can be opened and sensitive information can be accessed then a misconfiguration can be found.</li>
+</ul>
+<h5 id="other-sqlite-databases">Other SQLite Databases</h5>
+<ul>
+<li>There is a chance that other SQLite Databases can also be found in an iOS application such as <strong>YapDatabases</strong>, <strong>Couchbase</strong>.</li>
+<li>These may be storing sensitive data on them and leaving it unencrypted.</li>
+<li>The can be found inside the application folder:<ul>
+<li><code>/private/var/mobile/Containers/Data/Application/{APPID}</code></li>
+</ul>
+</li>
+<li>You can use the below command to find the databases of the application:<ul>
+<li><code>find ./ -name "*.sqlite" -or -name "*.db"</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="firebase-misconfiguration-json">Firebase Misconfiguration (.json)</h5>
+<ul>
+<li>Firebase is a NoSQL Cloud-based database.</li>
+<li>The database is stored in JSON format and synchronised in real time.</li>
+<li>If find a firebase string, there might be a chance that it might be misconfigured. Navigate to the URL kind of this <code>https://&lt;path_of_the_file&gt;/.json</code>, Comes under Insecure Data Storage</li>
+<li>If the response is:<ul>
+<li>Permission Denied: This means that you cannot access it, so it's well configured</li>
+<li>Null response or a bunch of JSON data: This means that the database is public and you at least have read access.</li>
+</ul>
+</li>
+</ul>
+<h5 id="ios-keychain">iOS Keychain</h5>
+<ul>
+<li>iOS Keychain is one of the best ways to store ypur secrets.</li>
+<li>But sometimes developers do not store them properly and hence this leads to leakage of such secrets.</li>
+<li>commaand to find secrets from keychains <code>ios keychain dump</code>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt;frida-ps<span class="w"> </span>-Ua<span class="w"> </span><span class="c1"># It gives list of apps open, then open the DVIAswiftv2, see &quot;com.highaltitudehacks.DVIAswiftv2.TF2TX3U8WG&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&gt;<span class="w"> </span>objection<span class="w"> </span>--gadget<span class="w"> </span>com.highaltitudehacks.DVIAswiftv2.TF2TX3U8WG<span class="w"> </span>explore<span class="w"> </span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Open the application enter data submit</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&gt;<span class="w"> </span>objection<span class="w"> </span>--gadget<span class="w"> </span>com.highaltitudehacks.DVIAswiftv2.TF2TX3U8WG<span class="w"> </span>explore<span class="w"> </span><span class="c1"># you see the data entered in the application</span>
+</span></code></pre></div></li>
+</ul>
+<h5 id="ios-uipasteboard">iOS UIPasteboard</h5>
+<ul>
+<li>UIPasteboard enables sharing data within applications. 2 types <code>ios pasteboard monitor</code><ul>
+<li>Systemwide Pasteboard: Sharing data with any application.</li>
+<li>Custom Pasteboard: Sharing data with app having same team ID.</li>
+</ul>
+</li>
+<li>An application can also prevent its users to copy sensitive data to the clipboard which is recommended</li>
+<li>Custom pasteboards can be creatd using pasteboardwithName:create or pasteboardWithUnique. The should not be used to these are deprecated since iOS 10.
+For Dynamic analysis, Objection pasteboard monitor can be used.</li>
+</ul>
+<h5 id="ios-webviews">iOS WebViews</h5>
+<ul>
+<li>These 3 types in iOS<ul>
+<li>UIWebView: It is deprecated starting on iOS 12 and should not be used. Javascript can be disabled</li>
+<li>WKWebView:<ul>
+<li>JS is enabled by default but disabled by javascriptEnabled properly</li>
+<li>JavaScriptCanOpenWindowsAutomatically properly can be used to block opening of new windows.</li>
+<li>hasOnlySecureContent properly can be used to verify resources are received using encrypted communication.</li>
+</ul>
+</li>
+<li>SFSafariViewController:<ul>
+<li>JavaScript cannot be disabled.</li>
+<li>Shares cookies and website data with Safari.</li>
+<li>Th user's activity and interaction are not visible to the app.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="ios-hot-patchingenforced-updating">iOS Hot Patching/Enforced Updating</h5>
+<ul>
+<li>Developers can remotely patch all installations of their app instantly without having to resubmit the application to the App store and wait until it's approved.</li>
+<li>Applications should be forced updated.</li>
+<li>Try downloading an older version of the application and check if it allows forced update or not.</li>
+</ul>
+<h5 id="sensitive-information-inside-application-memory">Sensitive information inside Application Memory</h5>
+<ul>
+<li>Somewhere or the other sensitive data is definitely going to be stored in memory.</li>
+<li>We first dump the memory of the application suing objection or frida then <code>strings memory &gt; strings.txt</code></li>
+<li>The file can be then opened using any text editor.</li>
+</ul>
+<h5 id="insecure-apisfunctions">Insecure APIs/Functions</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Insecure Functions</th>
+<th style="text-align: left;">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Weak Hashing Algorithms (MD5 &amp; SHA1)</td>
+<td style="text-align: left;"><code>otool -Iv &lt;app&gt; | grep "MD5"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Random Functions (random, srand, rand)</td>
+<td style="text-align: left;"><code>otool -Iv &lt;app&gt; | grep "random"</code> or "rand"</td>
+</tr>
+<tr>
+<td style="text-align: left;">Insecure Memory Allocation (malloc)</td>
+<td style="text-align: left;"><code>otool -Iv &lt;app&gt; | grep "malloc"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Vulnerable Functions (gets, memory, strncpy,strlen,vsnprintf,sscanf,strtok,alloca,sprintf,printf,vsprintf)</td>
+<td style="text-align: left;"><code>otool -Iv &lt;app&gt; | grep "gets"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="dynamic-analysis-ios">Dynamic Analysis iOS</h2>
+<ul>
+<li>Here we are sending request and response trying to change the request observe response, trying to break the functionality.</li>
+<li><strong>Tweaks</strong> are often used to bring extra features or customisation options to your device. (Tweaks installed only Jailbroken device)</li>
+<li>These are applications that can be installed using root privileges of the iOS device.</li>
+<li>In iOS pentesting, tweaks are going to help us bypass a lot of issues which we would be looking in coming sections.</li>
+<li><strong>Substitute</strong> is a default application that gets installed when the device gets jailbroke.</li>
+<li>The app allows you to fine tune substitute and control tweak injection</li>
+<li>Attempts to prevent processes with memory limits from crashing.</li>
+<li><strong>Cydia &amp; Sileo</strong> </li>
+<li>if Jailbroken your device using palerin Sileo, using Uncover, checkrin you get the Cydia, both GUI interface of APT for iOS</li>
+<li>It enables a user to find and install software not authorized by Apple on jailbroken.</li>
+<li>Third-Party App Store from where tweaks can be installed</li>
+</ul>
+<h5 id="installing-frida">Installing Frida</h5>
+<ul>
+<li>Add the repo link in the  <code>Sileo or cydia</code>  add the source install the app. <a href="https://www.ios-repo-updates.com/">Search repo here</a></li>
+<li>Add the <code>https://build.frida.re/</code>, then install the Frida app. To confirm installed or not using <code>frida-ps -Ua</code></li>
+</ul>
+<h5 id="jailbreak-detection-bypass">Jailbreak Detection bypass</h5>
+<ul>
+<li><strong>Firda</strong> So to allow tweaks you require Jailbreak.</li>
+<li>Jailbreak Detection mechanism which is implemented by the developers, app cannot work on jailbroken device.</li>
+<li>However some developers do not consider this as a best practice, While those who implement it, might not implement properly. <a href="https://codeshare.frida.re/@incogbyte/ios-jailbreak-bypass/">below js file</a></li>
+<li>Jailbreak detection bypass using <code>frida -U -f package_id -l jailbreak.js</code></li>
+<li><strong>Shadow</strong> add the source <code>https://ios.jjolano.me/</code> then install the <code>shadow</code>app, click on <code>Always-On</code> by default for all the apps or select specific you bypass the detection.</li>
+<li><strong>Liberty</strong> add the source <code>https://ryleylangus.com/repo/</code> then install Liberty Lite, Enable Liberty check the DVIA application check the jailbreak detection it's upto iOS 14 not sure after the verions</li>
+<li><strong>A-Bypass</strong> add the source <code>http://repo.co.kr</code> then install, it support modern apps, </li>
+<li>Other Jailbreak Detection <a href="https://iosgods.com/topic/142591-list-of-tweaks-to-bypass-jailbreak-detection-in-games/">LINKS</a> - FlyJB, HideJB, Liberty Lite, VNodeBypass, Hestia, iHide, KernBypass</li>
+</ul>
+<h5 id="objection">Objection</h5>
+<ul>
+<li>Objection is a runtime mobile exploration toolkit, To install objection simply run command <code>pip3 install objection, frida, frida-tools</code></li>
+<li>Explore the package using <code>objection --gadget package_name explore</code></li>
+<li>Disable jailbreak detection using <code>ios jailbreak disable</code></li>
+</ul>
+<h5 id="ssl-pinning-and-bypass-using-frida">SSL Pinning and Bypass using Frida</h5>
+<ul>
+<li>SSL Pinning is a technique that most application owners implement so that any request sent by the mobile application is not intercepted.</li>
+<li>SSL pinning is considered as the first and the most important step in the security mechanism of an application. But due to improper means, SSL Pinning can usually be bypassed.
+<img alt="SSL Pinning Handshake" src="https://www.mdpi.com/entropy/entropy-21-01136/article_deploy/html/images/entropy-21-01136-g002.png" /></li>
+<li>Check the package name using the <code>frida-ps -Us</code> then scripty is <a href="https://codeshare.frida.re/@federicodotta/ios13-pinning-bypass/">sslpinning.js</a> run this command <code>frida -U -f package_id -l sslpinning.js</code></li>
+<li><strong>SSL Kill Switch2</strong> Enable SSL byass, it will bypass all the SSL restrictions.</li>
+<li><strong>Objection</strong> the package using <code>objection --gadget package_name explore</code> then Disable SSL Pinning detection using <code>ios-sslpinning-disable</code></li>
+</ul>
+<h5 id="local-authentication-mechanism-bypass">Local Authentication Mechanism Bypass</h5>
+<ul>
+<li><strong>Objection</strong> the package using <code>objection --gadget package_name explore</code> then Disable Authentication detection using <code>ios ui biometrics_bypass</code></li>
+<li>Non jailbroken device <code>objection explore</code> open the app DVIAswiftv2 app then Touch/Face ID Bypass menu, then hook with objection terminal <code>ios ui biometrics_bypass</code></li>
+<li>Try to cover the face then it will ask for the password, the tool objection going to bypass the password restriction [Udemy IOS pentesting  Vaibhav Lakhani]</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<ul>
+<li>Download the App in Non-Jailbroken iphone</li>
+<li>Created .ipa file using this <a href="#extracting-ipa-file">process</a></li>
+<li>Static Analysis<ul>
+<li>MobSF for automated analysis</li>
+</ul>
+</li>
+<li>Dynamic Analysis<ul>
+<li>Setup a Burpsuite with Base OS IP address, In the phone set manual proxy with your IP</li>
+<li>Enable the SSL Kill Switch2 in an app enforces any ssl this bypass the that.</li>
+<li>Try to capture webapp issues</li>
+</ul>
+</li>
+</ul>
+<h5 id="frida-without-jailbreaking">Frida without Jailbreaking</h5>
+<ul>
+<li>Find the valid security Identity for codesigning the IPA file:<ul>
+<li><code>security find-indentity -p codesigning -v</code></li>
+</ul>
+</li>
+<li>Patch and inject Frida server in the IPA using objection<ul>
+<li><code>objection patchipa --source Application.ipa --codesign-signature</code></li>
+</ul>
+</li>
+<li>Unzip the newly created IPA using the commands<ul>
+<li><code>unzip Application-frida-signed.ipa</code></li>
+</ul>
+</li>
+<li>Install the patched IPA to the iOS Device<ul>
+<li><code>ios-deploy --bundle Payload/SomeAppName.app -W -d</code></li>
+</ul>
+</li>
+<li>Keep the terminal command running and run objection on a new terminal<ul>
+<li>objection explore</li>
+</ul>
+</li>
+</ul>
+<h5 id="ios-nuclei">iOS Nuclei</h5>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">echo</span><span class="w"> </span>/User/ashok/Downloads/Payload/&lt;App_Name&gt;/<span class="w"> </span><span class="p">|</span><span class="w"> </span>nuclei<span class="w"> </span>-t<span class="w"> </span>&lt;Path_Nuclei_Templates&gt;
+</span></code></pre></div>
+<ul>
+<li>iOS Frida Scripts <a href="https://github.com/TheBountyBox/Awesmoe-Frida-Scripts">Link</a></li>
+<li>
+<p>iOS Pentesting Mindmap 
+<img alt="Image" src="/assets/IOS_Map.jpeg" /></p>
+</li>
+<li>
+<p>iOS Penetest Checklist <a href="https://ashok5141.github.io/assets/iOS+Pentesting+Checklist.xlsx">Link</a></p>
+</li>
+<li>HackerOne Reports
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://hackerone.com/reports/746541
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>https://hackerone.com/reports/7036
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>https://hackerone.com/reports/168538
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>https://hackerone.com/reports/575562
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>https://hackerone.com/reports/328486
+</span></code></pre></div></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

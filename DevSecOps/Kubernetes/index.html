@@ -1,0 +1,1525 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ashok5141.github.io/DevSecOps/Kubernetes/">
+      
+      
+        <link rel="prev" href="../../AI%20Security/Prompt%20Injection/">
+      
+      
+        <link rel="next" href="../../MobileSec/Android/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/a.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Kubernetes - Ashok Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kubernetes-componenets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ashok Documentation" class="md-header__button md-logo" aria-label="Ashok Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ashok Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kubernetes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ashok Documentation" class="md-nav__button md-logo" aria-label="Ashok Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ashok Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EmailSecurity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EmailSecurity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to MkDocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gym/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Ashok's 30-Day Lean &amp; Chiseled Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OKTA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Okta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%20Security/Prompt%20Injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevSecOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DevSecOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-componenets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Componenets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-fundamentals-module-1-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Fundamentals - Module 1 Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubernetes Fundamentals - Module 1 Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Core Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-control-plane-master-node-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Control Plane (Master Node) Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-worker-node-data-plane-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Worker Node (Data Plane) Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-resource-logical-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Resource &amp; Logical Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threat-model-and-labskubernetes-goat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Threat Model and Labs(Kubernetes Goat)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Threat Model and Labs(Kubernetes Goat)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-basic-architecture-threat-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1 - Basic Architecture &amp; Threat Surface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-mapping-threat-models-to-kubernetes-goat-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 - Mapping Threat Models to Kubernetes Goat Scenarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-the-attackers-path-background-for-all-22-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: The "Attacker's Path" (Background for all 22 Scenarios)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: The &#34;Attacker&#39;s Path&#34; (Background for all 22 Scenarios)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-trust-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Trust Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MobileSec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MobileSec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MobileSec/Android/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MobileSec/Iphone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iphone Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MobileSec/Mobile-Security-Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OWASP Mobile Top 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ThreatModeling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ThreatModeling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ThreatModeling/SecureDesign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SecureDesign
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ThreatModeling/Threat-Modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat Modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appsec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appsec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appsec/API-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appsec/WAHH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAHH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appsec/xss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Xss
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-componenets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Componenets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-fundamentals-module-1-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Fundamentals - Module 1 Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubernetes Fundamentals - Module 1 Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Core Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-control-plane-master-node-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Control Plane (Master Node) Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-worker-node-data-plane-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Worker Node (Data Plane) Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-resource-logical-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Resource &amp; Logical Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threat-model-and-labskubernetes-goat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Threat Model and Labs(Kubernetes Goat)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Threat Model and Labs(Kubernetes Goat)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-basic-architecture-threat-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1 - Basic Architecture &amp; Threat Surface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-mapping-threat-models-to-kubernetes-goat-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2 - Mapping Threat Models to Kubernetes Goat Scenarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-the-attackers-path-background-for-all-22-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: The "Attacker's Path" (Background for all 22 Scenarios)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: The &#34;Attacker&#39;s Path&#34; (Background for all 22 Scenarios)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-trust-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Trust Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>K8s Architecture</p>
+<ul>
+<li>Historically, software was designed and deployed directly onto Linux-based Operating Systems. However, this often led to 'dependency hell' where code failed to run on different systems due to mismatched libraries or configurations. To solve this, Docker was introduced. Docker packages an application and all its dependencies into a single container, ensuring consistency across any environment.</li>
+<li>While Docker is excellent for running individual containers, it lacks built-in capabilities for high-level management, such as autoscaling, self-healing (restarting failed containers), and load balancing across multiple servers. This led to the rise of <code>Kubernetes(K8s)</code>, a container orchestration platform that automates the deployment, scaling, and management of containerized applications at scale.<ul>
+<li>Automatic container scheduling and scaling</li>
+<li>Self-healing (auto-restart, replace, reschedule)</li>
+<li>Load balancing and service discovery</li>
+<li>Declarative configuration using <code>YAML</code> files</li>
+<li>Rolling updates and rollbacks</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Kubernetes" src="https://kubernetes.io/images/docs/components-of-kubernetes.svg" /></p>
+<h5 id="kubernetes-componenets">Kubernetes Componenets</h5>
+<p><img alt="K8s Componenets" src="/assets/K8s_Components.png" /></p>
+<h1 id="kubernetes-fundamentals-module-1-summary">Kubernetes Fundamentals - Module 1 Summary</h1>
+<h2 id="1-core-concepts">1. Core Concepts</h2>
+<ul>
+<li><strong>Kubernetes (K8s)</strong>: An open-source container orchestration system written in Go for automating software deployment, scaling, and management.</li>
+<li><strong>YAML</strong>: A human-readable data serialization format that uses indentation to define structure and is commonly used for declarative configuration files.</li>
+</ul>
+<hr />
+<h2 id="2-control-plane-master-node-components">2. Control Plane (Master Node) Components</h2>
+<p>The Control Plane is responsible for making global decisions about the cluster and detecting/responding to events.</p>
+<ul>
+<li><strong>API Server (<code>kube-apiserver</code>)</strong>: The central component that exposes a RESTful API, validates configuration data, and handles authentication/authorization.</li>
+<li><strong>Etcd</strong>: A key-value database that stores the entire state, configuration, and persistent storage of all Kubernetes resources.</li>
+<li><strong>Kube Scheduler</strong>: A component that monitors pending pods and assigns them to the best-fit nodes based on resource availability and policies.</li>
+<li><strong>Controller Manager (<code>kube-controller-manager</code>)</strong>: Runs controllers that continuously reconcile the current cluster state with the desired state (e.g., node health, replica sets).</li>
+<li><strong>Cloud Controller Manager</strong>: A cloud-specific component that abstracts cloud provider APIs to manage infrastructure-level resources like load balancers and volumes.</li>
+</ul>
+<hr />
+<h2 id="3-worker-node-data-plane-components">3. Worker Node (Data Plane) Components</h2>
+<p>The Data Plane is responsible for running workloads and managing the container lifecycle.</p>
+<ul>
+<li><strong>Kubelet</strong>: The primary node agent that ensures containers are running in a Pod as expected and reports node status back to the API server.</li>
+<li><strong>Kube Proxy</strong>: A network proxy that maintains network rules (iptables/IPVS) to enable service discovery and traffic routing to pod endpoints.</li>
+<li><strong>Container Runtime</strong>: Software (e.g., containerd, CRI-O) responsible for pulling images and executing container processes on the node.</li>
+</ul>
+<hr />
+<h2 id="4-resource-logical-components">4. Resource &amp; Logical Components</h2>
+<ul>
+<li><strong>Pod</strong>: The smallest deployable unit that encapsulates one or more containers sharing a single IP, hostname, and storage.</li>
+<li><strong>Containers</strong>: Isolated, lightweight environments that encapsulate an application and its dependencies to run reliably across different environments.</li>
+<li><strong>Namespace</strong>: Logical partitions within a cluster used to isolate resources and organize multi-tenancy environments (e.g., dev, test, prod).</li>
+<li><strong>Service</strong>: An abstraction that provides stable network access and load balancing to a set of pods, supporting both internal and external communication.</li>
+<li><strong>Ingress</strong>: An API object that manages external HTTP/S access to services via rules for hostnames, paths, and TLS termination.</li>
+<li><strong>Deployments</strong>: A declarative object used to manage the lifecycle of stateless applications, ensuring desired replica counts and supporting rolling updates.</li>
+<li><strong>Replica Sets</strong>: A controller that ensures a specified number of identical pod replicas are running at all times.</li>
+<li><strong>ConfigMap</strong>: A key-value store for non-sensitive configuration data, allowing applications to be reconfigured without rebuilding images.</li>
+<li><strong>Secrets</strong>: A secure object for storing sensitive data like passwords and tokens, supporting base64 encoding and RBAC-controlled access.</li>
+<li><strong>Volumes</strong>: Provide persistent or shared storage that retains data beyond the container lifecycle.</li>
+<li><strong>RBAC (Role-Based Access Control)</strong>: An authorization mechanism that restricts resource access based on identity and the principle of least privilege.</li>
+</ul>
+<h1 id="threat-model-and-labskubernetes-goat">Threat Model and Labs(Kubernetes Goat)</h1>
+<ul>
+<li>K8s security is often explained via the 4C's model: Cloud, Cluster, Container and Code. A threat model identifies the <code>trust boundaries</code> between these layers. <a href="https://github.com/cncf/financial-user-group">K8s Security</a></li>
+</ul>
+<p><img alt="K8s Trust Boundary" src="https://raw.githubusercontent.com/cncf/financial-user-group/refs/heads/main/projects/k8s-threat-model/AttackTrees/images/trustboundaries.png" /></p>
+<h3 id="part-1-basic-architecture-threat-surface">Part 1 - Basic Architecture &amp; Threat Surface</h3>
+<ul>
+<li>The Control Plane (The "Brain")<ul>
+<li><strong>API Server</strong>: The gateway. If unauthenticated or misconfigured, an attacker has a direct path to cluster takeover.</li>
+<li><strong>Etcd</strong>: The database. If accessible, an attacker can steal all secrets and service account tokens.</li>
+<li><strong>Scheduler/Controllers</strong>: Can be manipulated to move malicious workloads or bypass security policies.</li>
+</ul>
+</li>
+<li>The Worker Nodes (The "Execution")<ul>
+<li><strong>Kubelet</strong>: The node agent. If it allows anonymous access, an attacker can execute commands in any pod on that node.</li>
+<li><strong>Kube-Proxy</strong>: Manages networking. Can be abused for lateral movement.</li>
+<li><strong>Container Runtime (Docker/containerd)</strong>: If escaped, the attacker gains control of the underlying host machine.</li>
+</ul>
+</li>
+</ul>
+<h3 id="part-2-mapping-threat-models-to-kubernetes-goat-scenarios">Part 2 - Mapping Threat Models to Kubernetes Goat Scenarios</h3>
+<ul>
+<li>The <strong>STRIDE</strong> model (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) is the industry standard for these threats.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">STRIDE Category</th>
+<th style="text-align: left;">K8s Component At Risk</th>
+<th style="text-align: left;">Threat Description</th>
+<th style="text-align: left;">Kubernetes Goat Scenario Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Information Disclosure</strong></td>
+<td style="text-align: left;">Code / Git / Secrets</td>
+<td style="text-align: left;">Sensitive data leaked in images or source code.</td>
+<td style="text-align: left;"><code>Sensitive keys in codebases</code>, <code>Hidden in layers</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Elevation of Privilege</strong></td>
+<td style="text-align: left;">RBAC / Service Accounts</td>
+<td style="text-align: left;">A low-privileged pod uses a token to gain admin rights.</td>
+<td style="text-align: left;"><code>RBAC least privileges misconfiguration</code>, <code>Gaining environment info</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Elevation of Privilege</strong></td>
+<td style="text-align: left;">Container Runtime</td>
+<td style="text-align: left;">Escaping the container to reach the host OS.</td>
+<td style="text-align: left;"><code>Container escape to the host system</code>, <code>DIND exploitation</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tampering</strong></td>
+<td style="text-align: left;">Image Registry</td>
+<td style="text-align: left;">An attacker modifies a "trusted" image to include a backdoor.</td>
+<td style="text-align: left;"><code>Attacking private registry</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Spoofing / Lateral Movement</strong></td>
+<td style="text-align: left;">Network / API</td>
+<td style="text-align: left;">Using a pod to scan the internal network or spoof services.</td>
+<td style="text-align: left;"><code>SSRF in K8s world</code>, <code>Kubernetes namespaces bypass</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Denial of Service</strong></td>
+<td style="text-align: left;">Resource Limits</td>
+<td style="text-align: left;">One pod consumes all CPU/RAM, crashing other apps.</td>
+<td style="text-align: left;"><code>DoS the Memory/CPU resources</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tampering</strong></td>
+<td style="text-align: left;">K8s API / Config</td>
+<td style="text-align: left;">Misconfigured ports allow direct access to apps.</td>
+<td style="text-align: left;"><code>NodePort exposed services</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="part-3-the-attackers-path-background-for-all-22-scenarios">Part 3: The "Attacker's Path" (Background for all 22 Scenarios)</h3>
+<ul>
+<li>
+<p>To understand why the 22 scenarios exist, you must follow the typical Kubernetes Kill Chain:</p>
+<ul>
+<li><strong>Initial Access</strong>: Exploiting an application bug (like SSRF) or finding a leaked credential (Git keys).</li>
+<li><strong>Discovery</strong>: Looking at environment variables or querying the API server to see "where am I?"</li>
+<li><strong>Lateral Movement</strong>: Moving from one namespace to another because of weak network policies.</li>
+<li><strong>Privilege Escalation</strong>: Finding a Service Account token with cluster-admin rights.</li>
+<li><strong>Persistence/Impact</strong>: Deploying a crypto-miner or deleting the cluster database.</li>
+</ul>
+</li>
+</ul>
+<h4 id="core-trust-boundaries">Core Trust Boundaries</h4>
+<ul>
+<li><strong>External User -&gt; API Server:</strong> Protected by AuthN/AuthZ.</li>
+<li><strong>Pod -&gt; API Server:</strong> Protected by Service Account RBAC.</li>
+<li><strong>Container -&gt; Host:</strong> Protected by Cgroups, Namespaces, and Runtimes.</li>
+<li><strong>Pod -&gt; Pod:</strong> Protected by Network Policies.</li>
+</ul>
+<p>The Threat Matrix (Summary of 22 Scenarios)</p>
+<ul>
+<li>
+<p>A. Supply Chain &amp; Image Security</p>
+<ul>
+<li><strong>Scenarios:</strong> <em>Sensitive keys in codebases, Hidden in layers, Attacking private registry.</em></li>
+<li><strong>Defense:</strong> Scan images, use private registries, and never hardcode secrets.</li>
+</ul>
+</li>
+<li>
+<p>B. Access Control (RBAC)</p>
+<ul>
+<li><strong>Scenarios:</strong> <em>RBAC misconfiguration, Gaining environment info, Helm v2 Tiller.</em></li>
+<li><strong>Defense:</strong> Follow the Principle of Least Privilege (PoLP).</li>
+</ul>
+</li>
+<li>
+<p>C. Runtime &amp; Escape</p>
+<ul>
+<li><strong>Scenarios:</strong> <em>Container escape, DIND exploitation, Docker/K8s CIS benchmarks.</em></li>
+<li><strong>Defense:</strong> Use Pod Security Admission, non-root users, and read-only file systems.</li>
+</ul>
+</li>
+<li>
+<p>D. Networking &amp; Lateral Movement</p>
+<ul>
+<li><strong>Scenarios:</strong> <em>SSRF, Namespace bypass, NodePort exposure, Network Boundaries.</em></li>
+<li><strong>Defense:</strong> Implement Network Policies and disable the "Automount Service Account Token" where not needed.</li>
+</ul>
+</li>
+<li>
+<p>E. Monitoring &amp; Governance</p>
+<ul>
+<li><strong>Scenarios:</strong> <em>KubeAudit, Falco, Popeye, Kyverno, Cilium Tetragon.</em></li>
+<li><strong>Defense:</strong> These are the TOOLS used to detect and prevent the threats mentioned above.</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
