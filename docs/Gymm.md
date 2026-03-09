@@ -25,6 +25,12 @@
 
 ---
 
+## 🌬️ Breathing & Tempo Technique
+* **The "1-2-3" Rule:** Count 3 seconds while lowering weights to stop shaking and build lean density.
+* **Exhale on Effort:** Always exhale during the "hard" part of the lift (pushing or pulling) and inhale during the "easy" part.
+
+---
+
 ## 💪 Workout 1: PUSH (Chest, Shoulders, Triceps)
 *Focus: Hitting every head of the pushing muscles for a "3D" look*
 
