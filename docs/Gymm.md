@@ -1,8 +1,8 @@
 # 🚀 Ashok's Master PPL Split: The 3-Part Muscle Plan
 
-**Location:** Planet Fitness (Little Elm, TX)
-**Goal:** Lean & Chiseled Definition
-**Daily Target:** 1,890 kcal | High Protein Focus
+* **Location:** Planet Fitness (Little Elm, TX)
+* **Goal:** Lean & Chiseled Definition
+* **Daily Target:** 1,890 kcal | High Protein Focus
 
 ---
 
