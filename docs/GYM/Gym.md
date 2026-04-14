@@ -62,7 +62,7 @@
 * **Chest Stretch:** Put your arm against a machine pillar and lean forward.
 * **Cat-Cow Stretch:** On the mat, arch and round your back to release tension.
 * **Hamstring Stretch:** Sit on the floor, one leg out, reach for your toes.
-* **Cobra Stretch:** Lie on your stomach and push your chest up to stretch your abs.
+* **Cobra Stretch:** Lie on your stomach and push your chest up to stretch your   abs.
 
 ---
 
