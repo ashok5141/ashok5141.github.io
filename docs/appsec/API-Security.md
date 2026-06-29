@@ -65,4 +65,4 @@ This table covers the most common API types, categorized by their underlying arc
 |:- | :- | :- |
 | Social Media APIs: Facebook, Twitter and Instagram | Enterprice Web Service: News aggregators, blogging platforms, and content-heavy websites | Content-Rich Applications: News aggregators, blogging platforms, and content-heavy websites |
 | E-Commerce APIs: APIs for online marketplaces like Amazon and eBay | Financial Services: Transactions, account management, and data retrieval | Personalized Experiences: E-commerce platforms |
-| IoT APIs: Control smart devies, such as thermostats, smart home assistants, and wearables | Government Services: Tax filing, social security benefits, and online permit application. | Data Aggregation: E-Commerce product catalog | 
+| IoT APIs: Control smart devies, such as thermostats, smart home assistants, and wearables | Government Services: Tax filing, social security benefits, and online permit application. | Data Aggregation: E-Commerce product catalog |
